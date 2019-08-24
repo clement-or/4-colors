@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/spikes.wav-e060b43aa3a720c50d73c9f79e8d82ba.sample"
+path="res://.import/saw.wav-115d032bad2f0b7101716253066d2307.sample"
 
 [deps]
 
-source_file="res://spikes.wav"
-dest_files=[ "res://.import/spikes.wav-e060b43aa3a720c50d73c9f79e8d82ba.sample" ]
+source_file="res://assets/audio/saw.wav"
+dest_files=[ "res://.import/saw.wav-115d032bad2f0b7101716253066d2307.sample" ]
 
 [params]
 

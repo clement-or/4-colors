@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/change_level.wav-b06a0e908757c5abce0af2f4a772ca08.sample"
+path="res://.import/change_color.wav-f13c4b3485026eb2ab2ed758b1ddb7c1.sample"
 
 [deps]
 
-source_file="res://change_level.wav"
-dest_files=[ "res://.import/change_level.wav-b06a0e908757c5abce0af2f4a772ca08.sample" ]
+source_file="res://assets/audio/change_color.wav"
+dest_files=[ "res://.import/change_color.wav-f13c4b3485026eb2ab2ed758b1ddb7c1.sample" ]
 
 [params]
 

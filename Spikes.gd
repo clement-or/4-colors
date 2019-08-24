@@ -38,5 +38,6 @@ func enable():
 		current_state = ENABLED
 
 func _on_Spikes_body_entered(body):
-	if body.get_name() == "Player":
+	if body.get_name() == "Player" && !body.is_dead:
+		$Audio.play()
 		body.die()
