@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/floor_tileset.png" type="Texture" id=2]
-[ext_resource path="res://Spikes.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Platform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://MovingSaw.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MovingSaw.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/floor_tileset.png" type="Texture" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/audio/music.ogg" type="AudioStream" id=7]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/audio/music.ogg" type="AudioStream" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 21, 50, 21, 50, 29, 0, 29 )
@@ -28,7 +29,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 
 [sub_resource type="TileSet" id=7]
 0/name = "floor_tileset.png 0"
-0/texture = ExtResource( 2 )
+0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 50, 50 )
@@ -44,7 +45,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 0/z_index = 0
 1/name = "floor_tileset.png 1"
-1/texture = ExtResource( 2 )
+1/texture = ExtResource( 5 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 100, 50, 50 )
@@ -60,7 +61,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 1/z_index = 0
 2/name = "floor_tileset.png 2"
-2/texture = ExtResource( 2 )
+2/texture = ExtResource( 5 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 100, 100, 50, 50 )
@@ -76,7 +77,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 2/z_index = 0
 3/name = "floor_tileset.png 3"
-3/texture = ExtResource( 2 )
+3/texture = ExtResource( 5 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 150, 0, 50, 50 )
@@ -92,7 +93,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 3/z_index = 0
 4/name = "floor_tileset.png 4"
-4/texture = ExtResource( 2 )
+4/texture = ExtResource( 5 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 200, 100, 50, 50 )
@@ -108,7 +109,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 4/z_index = 0
 5/name = "floor_tileset.png 5"
-5/texture = ExtResource( 2 )
+5/texture = ExtResource( 5 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 250, 0, 50, 50 )
@@ -124,6 +125,10 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 5/z_index = 0
 
+[sub_resource type="GDScript" id=9]
+script/source = "extends Camera2D
+"
+
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 0.596523, 2.48526 )
 
@@ -131,50 +136,56 @@ extents = Vector2( 0.596523, 2.48526 )
 script = ExtResource( 1 )
 
 [node name="Background" type="ColorRect" parent="."]
-margin_left = -550.0
-margin_top = -700.0
-margin_right = 1500.0
-margin_bottom = 500.0
+margin_right = 2050.0
+margin_bottom = 1200.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="LevelContent" type="Node2D" parent="."]
+
+[node name="Spikes" parent="LevelContent" instance=ExtResource( 2 )]
+position = Vector2( 576, 823 )
+
+[node name="Platform" parent="LevelContent" instance=ExtResource( 3 )]
+position = Vector2( 583.692, 672.888 )
+scale = Vector2( 4.29079, -0.488026 )
+color = 1
+
+[node name="MovingSaw" parent="LevelContent" instance=ExtResource( 4 )]
+position = Vector2( 752, 616 )
+scale = Vector2( 2.43715, 2.43715 )
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
 tile_set = SubResource( 7 )
 cell_size = Vector2( 50, 50 )
 cell_tile_origin = 1
 format = 1
-tile_data = PoolIntArray( -851968, 1, 0, -851947, 1, 0, -851946, 4, 0, -851945, 0, 0, -851944, 0, 0, -851943, 5, 0, -786432, 1, 0, -786411, 1, 0, -786410, 1, 0, -786407, 1, 0, -720896, 1, 0, -720875, 1, 0, -720874, 1, 0, -720871, 1, 0, -655360, 1, 0, -655339, 1, 0, -655338, 1, 0, -655335, 1, 0, -589824, 1, 0, -589803, 1, 0, -589802, 1, 0, -589799, 1, 0, -524288, 1, 0, -524267, 1, 0, -524266, 1, 0, -524263, 1, 0, -458752, 1, 0, -458731, 1, 0, -458730, 1, 0, -458727, 1, 0, -393216, 1, 0, -393195, 1, 0, -393194, 1, 0, -393191, 1, 0, -327680, 1, 0, -327659, 1, 0, -327658, 1, 0, -327655, 1, 0, -262144, 1, 0, -262123, 2, 0, -262122, 3, 0, -262119, 1, 0, -196608, 1, 0, -196583, 1, 0, -131072, 1, 0, -131047, 1, 0, -65536, 1, 0, -65511, 1, 0, 0, 2, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 5, 0, 13, 4, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 3, 0, 65544, 1, 0, 65549, 1, 0, 131080, 1, 0, 131085, 1, 0, 196616, 2, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 3, 0 )
-
-[node name="Spikes" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 550, 150 )
-
-[node name="Platform" parent="LevelContent" instance=ExtResource( 4 )]
-position = Vector2( 550, -50 )
-color = 1
-
-[node name="MovingSaw" parent="LevelContent" instance=ExtResource( 5 )]
-position = Vector2( 130, -200 )
-scale = Vector2( 2.43715, 2.43715 )
+tile_data = PoolIntArray( 0, 1, 0, 21, 1, 0, 22, 4, 0, 23, 0, 0, 24, 0, 0, 25, 5, 0, 65536, 1, 0, 65557, 1, 0, 65558, 1, 0, 65561, 1, 0, 131072, 1, 0, 131093, 1, 0, 131094, 1, 0, 131097, 1, 0, 196608, 1, 0, 196629, 1, 0, 196630, 1, 0, 196633, 1, 0, 262144, 1, 0, 262165, 1, 0, 262166, 1, 0, 262169, 1, 0, 327680, 1, 0, 327701, 1, 0, 327702, 1, 0, 327705, 1, 0, 393216, 1, 0, 393237, 1, 0, 393238, 1, 0, 393241, 1, 0, 458752, 1, 0, 458773, 1, 0, 458774, 1, 0, 458777, 1, 0, 524288, 1, 0, 524309, 1, 0, 524310, 1, 0, 524313, 1, 0, 589824, 1, 0, 589845, 2, 0, 589846, 3, 0, 589849, 1, 0, 655360, 1, 0, 655385, 1, 0, 720896, 1, 0, 720921, 1, 0, 786432, 1, 0, 786457, 1, 0, 851968, 2, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 5, 0, 851981, 4, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 3, 0, 917512, 1, 0, 917517, 1, 0, 983048, 1, 0, 983053, 1, 0, 1048584, 2, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 3, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 150, -50 )
+position = Vector2( 175, 600 )
 
 [node name="Foreground" type="Polygon2D" parent="."]
-position = Vector2( -550, -700 )
+position = Vector2( -550, -50 )
 polygon = PoolVector2Array( 603.72, 754.341, 996.072, 754.052, 995.829, 904.064, 1254.08, 904.215, 1254.06, 754.162, 1853.58, 754.236, 1850.84, 1055.04, 603.527, 1071.69 )
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2( 460, -110 )
+anchor_mode = 0
 current = true
+script = SubResource( 9 )
+
+[node name="HUD" parent="Camera" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 8 )
 volume_db = -6.0
 autoplay = true
 
 [node name="End" type="Area2D" parent="."]
-position = Vector2( 1123, -50 )
+position = Vector2( 1119, 602 )
 scale = Vector2( 83.819, 40.2373 )
 __meta__ = {
 "_edit_group_": true

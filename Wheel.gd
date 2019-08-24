@@ -12,10 +12,11 @@ func _ready():
 	pass
 
 func _process(delta):
-	if (Input.is_action_just_pressed("ui_select")):
+	if (Input.is_action_just_pressed("ui_select") && rect_rotation <= new_rotation):
 		next_color()
-	if rect_rotation >= new_rotation:
-		rect_rotation = rect_rotation - 1
+		
+	if rect_rotation > new_rotation:
+		rect_rotation = rect_rotation - 10
 		if rect_rotation <= -360: 
 			rect_rotation = 0
 			new_rotation = 0

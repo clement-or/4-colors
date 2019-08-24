@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Wheel.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/wheel_y.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/sprites/wheel_g.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/wheel_r.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/arrow.png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "scale_down"
@@ -130,13 +132,18 @@ tracks/0/keys = {
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = SubResource( 9 )
 
 [node name="Colors" type="Control" parent="."]
-margin_left = 925.0
-margin_top = 500.0
-margin_right = 975.0
-margin_bottom = 550.0
+editor/display_folded = true
+margin_left = 1675.0
+margin_top = 850.0
+margin_right = 3595.0
+margin_bottom = 1930.0
 rect_pivot_offset = Vector2( 25, 25 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Wheel" type="Control" parent="Colors"]
 margin_right = 50.0
