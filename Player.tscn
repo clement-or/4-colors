@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/character_temp.png" type="Texture" id=2]
+[ext_resource path="res://jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://change_color.wav" type="AudioStream" id=4]
+[ext_resource path="res://change_level.wav" type="AudioStream" id=5]
+[ext_resource path="res://lose.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -12,7 +16,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.1161, 77.8659 )
+extents = Vector2( 33.1161, 76.9038 )
 
 [node name="Player" type="KinematicBody2D"]
 collision/safe_margin = 0.01
@@ -20,7 +24,29 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-offset = Vector2( 0, -14 )
+offset = Vector2( 0, -8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 3 )
+bus = "Player"
+
+[node name="ChangeColor" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 4 )
+bus = "Player"
+
+[node name="ChangeLevel" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 5 )
+bus = "Player"
+
+[node name="Lose" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 6 )
+bus = "Player"
+
+[node name="RestartTimer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="RestartTimer" to="." method="restart_level"]

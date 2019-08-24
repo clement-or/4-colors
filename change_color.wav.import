@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/change_color.wav-d8148955f101ea10d314d673f0e82ad6.sample"
+
+[deps]
+
+source_file="res://change_color.wav"
+dest_files=[ "res://.import/change_color.wav-d8148955f101ea10d314d673f0e82ad6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

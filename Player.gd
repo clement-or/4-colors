@@ -7,14 +7,23 @@ export var gravity = 20
 export var y_speed = 600
 export var x_speed = 500
 
+var is_dead = false
+
 signal color_changed
+
+onready var sfx = {
+	"jump": $SFX/Jump,
+	"change_color": $SFX/ChangeColor,
+	"change_level": $SFX/ChangeLevel,
+	"lose": $SFX/Lose
+	}
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	
-	check_controls()
+	if !is_dead:
+		check_controls()
 	apply_gravity()
 	motion = move_and_slide(motion, UP)
 	pass
@@ -32,11 +41,13 @@ func check_controls():
 	# Vertical input
 	if (Input.is_action_pressed("ui_up") && is_on_floor()):
 		jump()
+		play_sound("jump")
 	if (Input.is_action_just_released("ui_up")):
 		stop_jump()
 		
 	# Color change
 	if (Input.is_action_just_pressed("ui_select")):
+		play_sound("change_color")
 		emit_signal("color_changed")
 
 func jump():
@@ -50,4 +61,13 @@ func apply_gravity():
 	motion.y += gravity
 	
 func die():
+	is_dead = true
+	play_sound("lose")
+	$RestartTimer.start()
+	
+
+func play_sound(sound):
+	sfx[sound].play()
+
+func restart_level():
 	get_tree().reload_current_scene()
