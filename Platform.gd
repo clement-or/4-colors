@@ -14,8 +14,7 @@ enum {
 var current_state
 
 func _ready():
-	if !color: 
-		color = 0
+	if !color: color = 0
 	$ColorRect.color = c.COLORS[color]
 	
 	if is_bg_color():

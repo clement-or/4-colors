@@ -15,6 +15,7 @@ var current_state = ENABLED
 
 func _ready():
 	if !color: color = RED
+	$AnimatedSprite.animation = String(color)
 	if is_bg_color():
 		disable()
 
