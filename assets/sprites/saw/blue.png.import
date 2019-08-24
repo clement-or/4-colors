@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character_temp.png-72451fe650127290d5956a42db8f0633.stex"
+path="res://.import/blue.png-3ad424a27e1db5b245cb60c954d11c72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character_temp.png"
-dest_files=[ "res://.import/character_temp.png-72451fe650127290d5956a42db8f0633.stex" ]
+source_file="res://assets/sprites/saw/blue.png"
+dest_files=[ "res://.import/blue.png-3ad424a27e1db5b245cb60c954d11c72.stex" ]
 
 [params]
 

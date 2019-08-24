@@ -48,3 +48,6 @@ func stop_jump():
 
 func apply_gravity():
 	motion.y += gravity
+	
+func die():
+	get_tree().reload_current_scene()

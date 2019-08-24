@@ -5,6 +5,7 @@ onready var bg = $Background
 onready var c = get_node("/root/Constants")
 
 func _ready():
+	c.color_index=3
 	change_bg_color()
 
 # Connected to color_changed signal

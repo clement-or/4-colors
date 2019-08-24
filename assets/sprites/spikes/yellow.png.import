@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character_temp.png-72451fe650127290d5956a42db8f0633.stex"
+path="res://.import/yellow.png-f2e3518fc14c97e12ac96c17bd42f4bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character_temp.png"
-dest_files=[ "res://.import/character_temp.png-72451fe650127290d5956a42db8f0633.stex" ]
+source_file="res://assets/sprites/spikes/yellow.png"
+dest_files=[ "res://.import/yellow.png-f2e3518fc14c97e12ac96c17bd42f4bc.stex" ]
 
 [params]
 

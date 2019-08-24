@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character_temp.png-72451fe650127290d5956a42db8f0633.stex"
+path="res://.import/floor_tileset_new.png-477fe1b1f8b1cc1ca4e401854334c368.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character_temp.png"
-dest_files=[ "res://.import/character_temp.png-72451fe650127290d5956a42db8f0633.stex" ]
+source_file="res://assets/sprites/floor_tileset_new.png"
+dest_files=[ "res://.import/floor_tileset_new.png-477fe1b1f8b1cc1ca4e401854334c368.stex" ]
 
 [params]
 

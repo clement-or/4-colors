@@ -1,58 +1,42 @@
-extends StaticBody2D
+extends Area2D
 
 # Nodes
 onready var c = get_node("/root/Constants")
-onready var hitbox = $CollisionShape2D
+onready var hitbox = $Hitbox
 
 export(int, "RED", "GREEN", "BLUE", "YELLOW") var color
+enum {RED, GREEN, BLUE, YELLOW}
 
 enum {
-	ENABLED,
-	DISABLED,
-	OVERLAPPED,
+	ENABLED
+	DISABLED
 }
-var current_state
+var current_state = ENABLED
 
 func _ready():
-	if !color: 
-		color = 0
-	$ColorRect.color = c.COLORS[color]
-	
+	if !color: color = RED
 	if is_bg_color():
 		disable()
-	else: enable()
 
 func _physics_process(delta):
 	if current_state == ENABLED:
 		if is_bg_color(): disable()
 	elif current_state == DISABLED:
 		if !is_bg_color(): enable()
-	elif current_state == OVERLAPPED:
-		overlap()
 
 func is_bg_color():
 	return c.COLORS[color] == c.COLORS[c.color_index]
 
 func disable():
-	if current_state != DISABLED:
+	if current_state == ENABLED:
 		hitbox.disabled = true
 		current_state = DISABLED
-		print("disabled")
 
 func enable():
-	if current_state != ENABLED:
+	if current_state == DISABLED:
 		hitbox.disabled = false
 		current_state = ENABLED
-		print("enabled")
 
-func overlap():
-	if current_state != OVERLAPPED:
-		hitbox.disabled = true
-		current_state = OVERLAPPED
-
-func _on_overlap(body):
+func _on_Spikes_body_entered(body):
 	if body.get_name() == "Player":
-		current_state = OVERLAPPED
-
-func _on_stop_overlap(body):
-	disable()
+		body.die()

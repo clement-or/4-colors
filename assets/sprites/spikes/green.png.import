@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character_temp.png-72451fe650127290d5956a42db8f0633.stex"
+path="res://.import/green.png-45103aaec41965d62250e6fd72723503.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character_temp.png"
-dest_files=[ "res://.import/character_temp.png-72451fe650127290d5956a42db8f0633.stex" ]
+source_file="res://assets/sprites/spikes/green.png"
+dest_files=[ "res://.import/green.png-45103aaec41965d62250e6fd72723503.stex" ]
 
 [params]
 
