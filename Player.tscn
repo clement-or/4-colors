@@ -33,10 +33,11 @@
 [ext_resource path="res://assets/sprites/character/r/run/perso_run_7.png" type="Texture" id=31]
 [ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_1.png" type="Texture" id=32]
 [ext_resource path="res://assets/sprites/character/y/perso_stat_j_1.png" type="Texture" id=33]
-[ext_resource path="res://jump.wav" type="AudioStream" id=34]
-[ext_resource path="res://change_color.wav" type="AudioStream" id=35]
-[ext_resource path="res://change_level.wav" type="AudioStream" id=36]
-[ext_resource path="res://lose.wav" type="AudioStream" id=37]
+[ext_resource path="res://assets/audio/jump.wav" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/change_color.wav" type="AudioStream" id=35]
+[ext_resource path="res://assets/audio/change_level.wav" type="AudioStream" id=36]
+[ext_resource path="res://assets/audio/lose.wav" type="AudioStream" id=37]
+
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
