@@ -1,14 +1,32 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/floor_tileset_new.png" type="Texture" id=2]
-[ext_resource path="res://Platform.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Spikes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/floor_tileset.png" type="Texture" id=2]
+[ext_resource path="res://Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MovingSaw.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 
-[sub_resource type="TileSet" id=1]
-0/name = "floor_tileset_new.png 0"
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 21, 50, 21, 50, 29, 0, 29 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 21, 0, 29, 0, 29, 50, 21, 50 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 21, 0, 29, 0, 29, 21, 50, 21, 50, 29, 21, 29 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 21, 21, 21, 0, 29, 0, 29, 29, 0, 29, 0, 21 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 21, 21, 50, 21, 50, 29, 29, 29, 29, 50, 21, 50 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "floor_tileset.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
@@ -16,29 +34,47 @@
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shapes = [  ]
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 0/z_index = 0
-1/name = "floor_tileset_new.png 1"
+1/name = "floor_tileset.png 1"
 1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 50, 0, 50, 50 )
+1/region = Rect2( 0, 100, 50, 50 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
-1/shapes = [  ]
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
-2/name = "floor_tileset_new.png 2"
+2/name = "floor_tileset.png 2"
 2/texture = ExtResource( 2 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 100, 0, 50, 50 )
+2/region = Rect2( 100, 100, 50, 50 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
-2/shapes = [  ]
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
-3/name = "floor_tileset_new.png 3"
+3/name = "floor_tileset.png 3"
 3/texture = ExtResource( 2 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
@@ -46,19 +82,31 @@
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
-3/shapes = [  ]
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 3/z_index = 0
-4/name = "floor_tileset_new.png 4"
+4/name = "floor_tileset.png 4"
 4/texture = ExtResource( 2 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 200, 0, 50, 50 )
+4/region = Rect2( 200, 100, 50, 50 )
 4/tile_mode = 0
 4/occluder_offset = Vector2( 0, 0 )
 4/navigation_offset = Vector2( 0, 0 )
-4/shapes = [  ]
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 4/z_index = 0
-5/name = "floor_tileset_new.png 5"
+5/name = "floor_tileset.png 5"
 5/texture = ExtResource( 2 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
@@ -66,7 +114,13 @@
 5/tile_mode = 0
 5/occluder_offset = Vector2( 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
-5/shapes = [  ]
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 5/z_index = 0
 
 [node name="Level" type="Node"]
@@ -82,19 +136,18 @@ margin_bottom = 641.0
 [node name="LevelContent" type="Node" parent="."]
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 7 )
 cell_size = Vector2( 50, 50 )
+cell_tile_origin = 1
 format = 1
-tile_data = PoolIntArray( -1048562, 1, 0, -1048561, 1, 0, -1048558, 1, 0, -983026, 1, 0, -983025, 1, 0, -983022, 1, 0, -917490, 1, 0, -917489, 1, 0, -917486, 1, 0, -786433, 1, 0, -851954, 1, 0, -851953, 1, 0, -851950, 1, 0, -720897, 1, 0, -786418, 1, 0, -786417, 1, 0, -786414, 1, 0, -655361, 1, 0, -720882, 1, 0, -720881, 1, 0, -720878, 1, 0, -589825, 1, 0, -655346, 1, 0, -655345, 1, 0, -655342, 1, 0, -524289, 1, 0, -589810, 1, 0, -589809, 1, 0, -589806, 1, 0, -458753, 1, 0, -524274, 1, 0, -524273, 1, 0, -524270, 1, 0, -393217, 1, 0, -458738, 1, 0, -458737, 1, 0, -458734, 1, 0, -327681, 1, 0, -393202, 1, 0, -393201, 1, 0, -393198, 1, 0, -262145, 1, 0, -327666, 1, 0, -327665, 1, 0, -327662, 1, 0, -196609, 1, 0, -262130, 2, 0, -262129, 3, 0, -262126, 1, 0, -131073, 1, 0, -196590, 1, 0, -65537, 1, 0, -131054, 1, 0, -1, 1, 0, -65518, 1, 0, 65535, 2, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 5, 0, 13, 4, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 3, 0, 65545, 1, 0, 65549, 1, 0, 131081, 1, 0, 131085, 1, 0, 196617, 2, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 3, 0 )
+tile_data = PoolIntArray( -851968, 1, 0, -851947, 1, 0, -851946, 4, 0, -851945, 0, 0, -851944, 0, 0, -851943, 5, 0, -786432, 1, 0, -786411, 1, 0, -786410, 1, 0, -786407, 1, 0, -720896, 1, 0, -720875, 1, 0, -720874, 1, 0, -720871, 1, 0, -655360, 1, 0, -655339, 1, 0, -655338, 1, 0, -655335, 1, 0, -589824, 1, 0, -589803, 1, 0, -589802, 1, 0, -589799, 1, 0, -524288, 1, 0, -524267, 1, 0, -524266, 1, 0, -524263, 1, 0, -458752, 1, 0, -458731, 1, 0, -458730, 1, 0, -458727, 1, 0, -393216, 1, 0, -393195, 1, 0, -393194, 1, 0, -393191, 1, 0, -327680, 1, 0, -327659, 1, 0, -327658, 1, 0, -327655, 1, 0, -262144, 1, 0, -262123, 1, 0, -262122, 1, 0, -262119, 1, 0, -196608, 1, 0, -196587, 2, 0, -196586, 3, 0, -196583, 1, 0, -131072, 1, 0, -131047, 1, 0, -65536, 1, 0, -65511, 1, 0, 0, 2, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 5, 0, 13, 4, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 3, 0, 65544, 1, 0, 65549, 1, 0, 131080, 1, 0, 131085, 1, 0, 196616, 2, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 3, 0 )
 
-[node name="Platform" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 556.562, -15 )
-scale = Vector2( 4.21875, 0.5 )
+[node name="Spikes" parent="LevelContent" instance=ExtResource( 3 )]
+position = Vector2( 550, 150 )
+
+[node name="Platform" parent="LevelContent" instance=ExtResource( 4 )]
+position = Vector2( 550, -50 )
 color = 1
-
-[node name="Spikes" parent="LevelContent" instance=ExtResource( 4 )]
-position = Vector2( 550, 120 )
-color = 0
 
 [node name="MovingSaw" parent="LevelContent" instance=ExtResource( 5 )]
 position = Vector2( 130, -200 )
@@ -103,7 +156,7 @@ scale = Vector2( 2.43715, 2.43715 )
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 180, -82.9943 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 460, -110 )
 current = true
 [connection signal="color_changed" from="Player" to="." method="change_bg_color"]
