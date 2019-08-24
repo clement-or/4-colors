@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/lose.wav-91b99e40cf36caf60a52f252757e322f.sample"
+path="res://.import/spikes.wav-2014459ca554c05844392cd05e2e6460.sample"
 
 [deps]
 
-source_file="res://lose.wav"
-dest_files=[ "res://.import/lose.wav-91b99e40cf36caf60a52f252757e322f.sample" ]
+source_file="res://assets/audio/spikes.wav"
+dest_files=[ "res://.import/spikes.wav-2014459ca554c05844392cd05e2e6460.sample" ]
 
 [params]
 

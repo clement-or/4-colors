@@ -1,13 +1,14 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
 [ext_resource path="res://Spikes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MovingSaw.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sprites/floor_tileset.png" type="Texture" id=5]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Saw.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/audio/music.ogg" type="AudioStream" id=8]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 21, 50, 21, 50, 29, 0, 29 )
@@ -125,12 +126,12 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 5/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 0.596523, 2.48526 )
+
 [sub_resource type="GDScript" id=9]
 script/source = "extends Camera2D
 "
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 0.596523, 2.48526 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -143,7 +144,19 @@ color = Color( 1, 1, 1, 0 )
 [node name="LevelContent" type="Node2D" parent="."]
 
 [node name="Spikes" parent="LevelContent" instance=ExtResource( 2 )]
-position = Vector2( 576, 823 )
+position = Vector2( 475, 850 )
+
+[node name="Spikes2" parent="LevelContent" instance=ExtResource( 2 )]
+position = Vector2( 525, 850 )
+
+[node name="Spikes3" parent="LevelContent" instance=ExtResource( 2 )]
+position = Vector2( 575, 850 )
+
+[node name="Spikes4" parent="LevelContent" instance=ExtResource( 2 )]
+position = Vector2( 625, 850 )
+
+[node name="Spikes5" parent="LevelContent" instance=ExtResource( 2 )]
+position = Vector2( 675, 850 )
 
 [node name="Platform" parent="LevelContent" instance=ExtResource( 3 )]
 position = Vector2( 583.692, 672.888 )
@@ -151,8 +164,7 @@ scale = Vector2( 4.29079, -0.488026 )
 color = 1
 
 [node name="MovingSaw" parent="LevelContent" instance=ExtResource( 4 )]
-position = Vector2( 752, 616 )
-scale = Vector2( 2.43715, 2.43715 )
+position = Vector2( 600, 474.377 )
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
 tile_set = SubResource( 7 )
@@ -161,37 +173,40 @@ cell_tile_origin = 1
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 21, 1, 0, 22, 4, 0, 23, 0, 0, 24, 0, 0, 25, 5, 0, 65536, 1, 0, 65557, 1, 0, 65558, 1, 0, 65561, 1, 0, 131072, 1, 0, 131093, 1, 0, 131094, 1, 0, 131097, 1, 0, 196608, 1, 0, 196629, 1, 0, 196630, 1, 0, 196633, 1, 0, 262144, 1, 0, 262165, 1, 0, 262166, 1, 0, 262169, 1, 0, 327680, 1, 0, 327701, 1, 0, 327702, 1, 0, 327705, 1, 0, 393216, 1, 0, 393237, 1, 0, 393238, 1, 0, 393241, 1, 0, 458752, 1, 0, 458773, 1, 0, 458774, 1, 0, 458777, 1, 0, 524288, 1, 0, 524309, 1, 0, 524310, 1, 0, 524313, 1, 0, 589824, 1, 0, 589845, 2, 0, 589846, 3, 0, 589849, 1, 0, 655360, 1, 0, 655385, 1, 0, 720896, 1, 0, 720921, 1, 0, 786432, 1, 0, 786457, 1, 0, 851968, 2, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 5, 0, 851981, 4, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 3, 0, 917512, 1, 0, 917517, 1, 0, 983048, 1, 0, 983053, 1, 0, 1048584, 2, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 3, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 175, 600 )
-
-[node name="Foreground" type="Polygon2D" parent="."]
-position = Vector2( -550, -50 )
-polygon = PoolVector2Array( 603.72, 754.341, 996.072, 754.052, 995.829, 904.064, 1254.08, 904.215, 1254.06, 754.162, 1853.58, 754.236, 1850.84, 1055.04, 603.527, 1071.69 )
-
-[node name="Camera" type="Camera2D" parent="."]
-anchor_mode = 0
-current = true
-script = SubResource( 9 )
-
-[node name="HUD" parent="Camera" instance=ExtResource( 7 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1920.0
-margin_bottom = 1080.0
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-volume_db = -6.0
-autoplay = true
-
-[node name="End" type="Area2D" parent="."]
+[node name="End" type="Area2D" parent="LevelContent"]
 position = Vector2( 1119, 602 )
 scale = Vector2( 83.819, 40.2373 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelContent/End"]
 shape = SubResource( 8 )
+
+[node name="Saw" parent="LevelContent" instance=ExtResource( 6 )]
+position = Vector2( 375, 350 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 175, 600 )
+
+[node name="Foreground" type="Polygon2D" parent="."]
+position = Vector2( -550, -50 )
+polygon = PoolVector2Array( 603.72, 754.341, 996.072, 754.052, 995.829, 904.064, 1254.08, 904.215, 1254.06, 754.162, 1853.58, 754.236, 1850.84, 1055.04, 603.527, 1071.69 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -6.0
+autoplay = true
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = SubResource( 9 )
+
+[node name="HUD" parent="Camera" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+[connection signal="body_entered" from="LevelContent/End" to="." method="_on_End_body_entered"]
 [connection signal="color_changed" from="Player" to="." method="change_bg_color"]
-[connection signal="body_entered" from="End" to="." method="_on_End_body_entered"]
