@@ -34,19 +34,19 @@ func is_bg_color():
 
 func disable():
 	if current_state != DISABLED:
-		hitbox.disabled = true
+		hitbox.set_deferred("disabled",true)
 		current_state = DISABLED
 		print("disabled")
 
 func enable():
 	if current_state != ENABLED:
-		hitbox.disabled = false
+		hitbox.set_deferred("disabled",false)
 		current_state = ENABLED
 		print("enabled")
 
 func overlap():
 	if current_state != OVERLAPPED:
-		hitbox.disabled = true
+		hitbox.set_deferred("disabled",true)
 		current_state = OVERLAPPED
 
 func _on_overlap(body):
