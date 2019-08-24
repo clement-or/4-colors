@@ -4,7 +4,7 @@ const UP = Vector2(0,-1)
 
 var motion = Vector2(0,0)
 export var gravity = 20
-export var y_speed = 700
+export var y_speed = 600
 export var x_speed = 500
 
 var is_dead = false
@@ -12,7 +12,7 @@ var is_dead = false
 signal color_changed
 
 enum {RED, GREEN, BLUE, YELLOW}
-enum {RUN, IDLE, JUMP, FALL, DIE}
+enum {RUN, IDLE, JUMP, FALL}
 var current_color = RED
 var current_state = IDLE
 
@@ -66,15 +66,14 @@ func jump():
 	motion.y = -y_speed
 
 func stop_jump():
-	if motion.y < 0:
-		motion.y += -0.5*motion.y
+	if motion.y < 0.2*y_speed:
+		motion.y = -0.2*y_speed
 
 func apply_gravity():
 	motion.y += gravity
 	
 func die():
 	is_dead = true
-	motion = Vector2(0,0)
 	play_sound("lose")
 	$RestartTimer.start()
 	
@@ -95,8 +94,6 @@ func set_animation():
 			$AnimatedSprite.animation = "r_jump"
 		elif current_state == FALL:
 			$AnimatedSprite.animation = "r_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"
 			
 	elif current_color == GREEN:
 		if current_state == IDLE:
@@ -107,8 +104,6 @@ func set_animation():
 			$AnimatedSprite.animation = "g_jump"
 		elif current_state == FALL:
 			$AnimatedSprite.animation = "g_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"
 			
 	elif current_color == BLUE:
 		if current_state == IDLE:
@@ -119,8 +114,6 @@ func set_animation():
 			$AnimatedSprite.animation = "b_jump"
 		elif current_state == FALL:
 			$AnimatedSprite.animation = "b_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "b_die"
 			
 	elif current_color == YELLOW:
 		if current_state == IDLE:
@@ -131,5 +124,3 @@ func set_animation():
 			$AnimatedSprite.animation = "y_jump"
 		elif current_state == FALL:
 			$AnimatedSprite.animation = "y_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"

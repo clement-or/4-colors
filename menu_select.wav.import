@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/menu_cancel.wav-87dba719acf64e6c0475ae4e589a7fc4.sample"
+path="res://.import/menu_select.wav-8d30ebf0b69729530553e0f87b91a98a.sample"
 
 [deps]
 
-source_file="res://assets/audio/menu_cancel.wav"
-dest_files=[ "res://.import/menu_cancel.wav-87dba719acf64e6c0475ae4e589a7fc4.sample" ]
+source_file="res://menu_select.wav"
+dest_files=[ "res://.import/menu_select.wav-8d30ebf0b69729530553e0f87b91a98a.sample" ]
 
 [params]
 

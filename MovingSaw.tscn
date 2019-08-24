@@ -11,7 +11,6 @@ _data = {
 [node name="MovingSaw" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 1 )
-color = 1
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2( 118.999, -0.255661 )
