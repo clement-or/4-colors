@@ -25,12 +25,11 @@ outline_size = 10
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=4]
 size = 40
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "click"
+[sub_resource type="Animation" id=5]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -45,8 +44,7 @@ tracks/0/keys = {
 "values": [ Vector2( -35, 0 ), Vector2( -40, 10 ), Vector2( -35, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "hover"
+[sub_resource type="Animation" id=6]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -61,12 +59,11 @@ tracks/0/keys = {
 "values": [ Color( 0.909804, 0.211765, 0.403922, 1 ), Color( 0.905882, 0.0980392, 0.321569, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 75
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "click"
+[sub_resource type="Animation" id=8]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -81,8 +78,7 @@ tracks/0/keys = {
 "values": [ Vector2( -35, 0 ), Vector2( -40, 10 ), Vector2( -35, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "hover"
+[sub_resource type="Animation" id=9]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -97,15 +93,15 @@ tracks/0/keys = {
 "values": [ Color( 0.282353, 0.270588, 0.733333, 1 ), Color( 0.141176, 0.12549, 0.729412, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 100
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=11]
 size = 50
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=12]
 size = 70
 font_data = ExtResource( 4 )
 
@@ -260,7 +256,7 @@ margin_left = -1489.0
 margin_top = 151.72
 margin_right = 567.0
 margin_bottom = 354.72
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 4 )
 text = "a game created for the 9th geta game jam"
 align = 1
 
@@ -289,13 +285,13 @@ margin_bottom = 163.0
 color = Color( 0.905882, 0.0980392, 0.321569, 1 )
 
 [node name="Anim" type="AnimationPlayer" parent="Buttons/Play/ColorRect"]
-anims/click = SubResource( 4 )
-anims/hover = SubResource( 5 )
+anims/click = SubResource( 5 )
+anims/hover = SubResource( 6 )
 
 [node name="Play" type="Button" parent="Buttons/Play"]
 margin_right = 700.0
 margin_bottom = 153.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "PLAY"
 flat = true
 align = 0
@@ -320,13 +316,13 @@ margin_bottom = 163.0
 color = Color( 0.282353, 0.270588, 0.733333, 1 )
 
 [node name="Anim" type="AnimationPlayer" parent="Buttons/Credits/ColorRect"]
-anims/click = SubResource( 7 )
-anims/hover = SubResource( 8 )
+anims/click = SubResource( 8 )
+anims/hover = SubResource( 9 )
 
 [node name="Credits" type="Button" parent="Buttons/Credits"]
 margin_right = 700.0
 margin_bottom = 153.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "CREDITS"
 flat = true
 align = 0
@@ -348,7 +344,7 @@ color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 margin_left = -5.0
 margin_right = 1927.0
 margin_bottom = 100.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "CREDITS"
 align = 1
 
@@ -362,7 +358,7 @@ margin_bottom = 180.37
 margin_left = -818.35
 margin_right = 912.65
 margin_bottom = 203.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "lead development
 "
 align = 1
@@ -386,7 +382,7 @@ margin_bottom = 363.37
 margin_left = -818.35
 margin_right = 912.65
 margin_bottom = 203.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "art
 "
 align = 1
@@ -410,7 +406,7 @@ margin_bottom = 546.37
 margin_left = -818.35
 margin_right = 912.65
 margin_bottom = 203.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "level design"
 align = 1
 
@@ -437,7 +433,7 @@ margin_left = -818.35
 margin_top = -64.2848
 margin_right = 912.65
 margin_bottom = 138.715
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "music"
 align = 1
 
@@ -446,7 +442,7 @@ margin_left = -821.0
 margin_top = -37.2362
 margin_right = 910.0
 margin_bottom = 223.764
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 12 )
 text = "juhani junkalai
 opengameart.com"
 align = 1
@@ -462,7 +458,7 @@ margin_left = -818.35
 margin_top = 175.306
 margin_right = 912.65
 margin_bottom = 378.306
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "shader code"
 align = 1
 
@@ -471,7 +467,7 @@ margin_left = -821.0
 margin_top = 206.671
 margin_right = 910.0
 margin_bottom = 467.671
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 12 )
 text = "Decroded
 huge thank you !"
 align = 1

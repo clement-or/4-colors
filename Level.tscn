@@ -127,7 +127,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 5/z_index = 0
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=8]
 script/source = "extends Camera2D
 "
 
@@ -218,7 +218,7 @@ autoplay = true
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
-script = SubResource( 9 )
+script = SubResource( 8 )
 
 [node name="HUD" parent="Camera" instance=ExtResource( 10 )]
 anchor_right = 0.0
