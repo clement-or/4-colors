@@ -127,11 +127,11 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 5/z_index = 0
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=9]
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=10]
 script/source = "extends Camera2D
 "
 
@@ -152,6 +152,7 @@ invert_enable = true
 polygon = PoolVector2Array( 600, 400, 2400, 400, 2400, 1100, 600, 1100, 600, 900, 2200, 900, 2200, 750, 1900, 750, 1900, 800, 1300, 800, 1300, 750, 1150, 750, 1150, 800, 900, 800, 900, 750, 600, 750 )
 
 [node name="LevelContent" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="End" type="Area2D" parent="LevelContent"]
 editor/display_folded = true
@@ -166,9 +167,11 @@ shape = SubResource( 1 )
 
 [node name="Spikes" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 375, 750 )
+color = 4
 
 [node name="Spikes2" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 425, 750 )
+color = 4
 
 [node name="Spikes19" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 1475, 1050 )
@@ -186,6 +189,7 @@ color = 3
 
 [node name="Spikes3" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 475, 750 )
+color = 4
 
 [node name="Spikes22" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 1525, 1050 )
@@ -203,6 +207,7 @@ color = 3
 
 [node name="Spikes4" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 525, 750 )
+color = 4
 
 [node name="Spikes18" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 1575, 1050 )
@@ -220,6 +225,7 @@ color = 3
 
 [node name="Spikes5" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 575, 750 )
+color = 4
 
 [node name="Spikes20" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 1625, 1050 )
@@ -295,7 +301,7 @@ margin_left = 779.665
 margin_top = 663.336
 margin_right = 1295.67
 margin_bottom = 755.336
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.894118, 0.0901961, 0.309804, 1 )
 text = "\"GG genius\"     ~Green spikes being mad"
 align = 1
@@ -306,7 +312,7 @@ margin_left = 325.0
 margin_top = 423.708
 margin_right = 621.0
 margin_bottom = 615.708
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 9 )
 text = "Watch for the spikes!
 They might hurt you
 ....
@@ -319,11 +325,10 @@ valign = 1
 position = Vector2( 175, 600 )
 
 [node name="Camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2( 0, 350 )
 anchor_mode = 0
 current = true
-script = SubResource( 9 )
+script = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
