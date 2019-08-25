@@ -168,7 +168,7 @@ position = Vector2( 675, 850 )
 color = 3
 
 [node name="Platform" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 583.692, 672.888 )
+position = Vector2( 583.692, 725 )
 scale = Vector2( 4.29079, -0.488026 )
 color = 1
 
