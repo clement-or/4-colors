@@ -19,6 +19,7 @@ func change_bg_color():
 	$Player/Sprite.get_material().set_shader_param("c_background", bg.color)
 	$Player/AnimatedSprite.get_material().set_shader_param("c_background", bg.color)
 
-func _on_End_body_entered(body):
+func end_level(body):
 	if body.get_name() == "Player":
+		$LevelContent/LevelEnd/Audio.play()
 		emit_signal("level_finished")

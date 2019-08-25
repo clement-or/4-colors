@@ -36,6 +36,7 @@ func _physics_process(delta):
 
 func check_controls():
 	# Horizontal input
+	if is_on_floor(): current_state = IDLE
 	if (Input.is_action_pressed("ui_right")):
 		motion.x += x_speed/3
 		$AnimatedSprite.flip_h = false
@@ -61,18 +62,24 @@ func check_controls():
 		current_color = (current_color+1)%4
 		play_sound("change_color")
 		emit_signal("color_changed")
+	
+	if motion.y > 100:
+		current_state = FALL
 
 func jump():
+	current_state = JUMP
 	motion.y = -y_speed
 
 func stop_jump():
 	if motion.y < 0:
 		motion.y += -0.5*motion.y
+		current_state = FALL
 
 func apply_gravity():
 	motion.y += gravity
 	
 func die():
+	current_state = DIE
 	is_dead = true
 	motion = Vector2(0,0)
 	play_sound("lose")
@@ -91,45 +98,28 @@ func set_animation():
 			$AnimatedSprite.animation = "r_idle"
 		elif current_state == RUN:
 			$AnimatedSprite.animation = "r_run"
-		elif current_state == JUMP:
-			$AnimatedSprite.animation = "r_jump"
-		elif current_state == FALL:
-			$AnimatedSprite.animation = "r_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"
 			
 	elif current_color == GREEN:
 		if current_state == IDLE:
 			$AnimatedSprite.animation = "g_idle"
 		elif current_state == RUN:
 			$AnimatedSprite.animation = "g_run"
-		elif current_state == JUMP:
-			$AnimatedSprite.animation = "g_jump"
-		elif current_state == FALL:
-			$AnimatedSprite.animation = "g_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"
 			
 	elif current_color == BLUE:
 		if current_state == IDLE:
 			$AnimatedSprite.animation = "b_idle"
 		elif current_state == RUN:
 			$AnimatedSprite.animation = "b_run"
-		elif current_state == JUMP:
-			$AnimatedSprite.animation = "b_jump"
-		elif current_state == FALL:
-			$AnimatedSprite.animation = "b_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "b_die"
 			
 	elif current_color == YELLOW:
 		if current_state == IDLE:
 			$AnimatedSprite.animation = "y_idle"
 		elif current_state == RUN:
 			$AnimatedSprite.animation = "y_run"
-		elif current_state == JUMP:
-			$AnimatedSprite.animation = "y_jump"
-		elif current_state == FALL:
-			$AnimatedSprite.animation = "y_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"
+		
+	if current_state == JUMP:
+		$AnimatedSprite.animation = "jump"
+	elif current_state == FALL:
+		$AnimatedSprite.animation = "fall"
+	elif current_state == DIE:
+		$AnimatedSprite.animation = "die"
