@@ -156,14 +156,15 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelContent/End"]
 shape = SubResource( 8 )
 
-[node name="Foreground" type="Polygon2D" parent="."]
-position = Vector2( -550, -50 )
-color = Color( 1, 1, 1, 0 )
-invert_enable = true
-polygon = PoolVector2Array( 603.72, 754.341, 996.072, 754.052, 995.829, 904.064, 1254.08, 904.215, 1254.06, 754.162, 1853.58, 754.236, 1850.84, 1055.04, 603.527, 1071.69 )
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 175, 600 )
+
+[node name="Foreground" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -550, -50 )
+color = Color( 1, 0, 1, 1 )
+invert_enable = true
+polygon = PoolVector2Array( 603.72, 754.341, 996.072, 754.052, 995.829, 904.064, 1254.08, 904.215, 1254.06, 754.162, 1853.58, 754.236, 1850.84, 1055.04, 603.527, 1071.69 )
 
 [node name="Camera" type="Camera2D" parent="."]
 visible = false

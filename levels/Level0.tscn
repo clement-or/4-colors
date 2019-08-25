@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/PermanentMarker-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/floor_tileset.png" type="Texture" id=4]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/audio/music.ogg" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
+size = 30
 font_data = ExtResource( 2 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
@@ -142,16 +143,22 @@ margin_right = 2050.0
 margin_bottom = 1200.0
 color = Color( 1, 1, 1, 0 )
 
+[node name="Foreground" type="Polygon2D" parent="."]
+position = Vector2( -550, -50 )
+color = Color( 1, 0, 1, 1 )
+invert_enable = true
+polygon = PoolVector2Array( 600, 750, 600, 150, 2450, 150, 2450, 750, 1250, 750, 1250, 650, 1050, 650, 1050, 750 )
+
 [node name="LevelContent" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="LevelContent"]
 margin_left = 150.0
-margin_top = 300.0
-margin_right = 710.0
-margin_bottom = 400.0
+margin_top = 200.0
+margin_right = 737.0
+margin_bottom = 432.0
 custom_fonts/font = SubResource( 1 )
 text = "Welcome to
-4Colors : Whex's journey
+4Colors : Whex's journey !
 ( You are Whex )
 
 Press the arrow keys to move and jump"
@@ -164,7 +171,7 @@ margin_top = 250.0
 margin_right = 1550.0
 margin_bottom = 350.0
 custom_fonts/font = SubResource( 1 )
-text = "Press space to use your power"
+text = "Press space to use your power !"
 align = 1
 valign = 1
 
@@ -175,18 +182,18 @@ margin_right = 1750.0
 margin_bottom = 400.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.894118, 0.0901961, 0.309804, 1 )
-text = "You can switch between 4 Color"
+text = "You can switch between 4 Color !"
 align = 1
 valign = 1
 
 [node name="Label5" type="Label" parent="LevelContent"]
-margin_left = 1300.0
+margin_left = 1287.5
 margin_top = 875.0
-margin_right = 1500.0
+margin_right = 1487.5
 margin_bottom = 925.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.894118, 0.0901961, 0.309804, 1 )
-text = "Look at this"
+text = "Look at this ->"
 align = 1
 valign = 1
 
@@ -231,13 +238,8 @@ shape = SubResource( 9 )
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 175, 600 )
 
-[node name="Foreground" type="Polygon2D" parent="."]
-position = Vector2( -550, -50 )
-color = Color( 1, 1, 1, 0 )
-invert_enable = true
-polygon = PoolVector2Array( 600, 750, 600, 150, 2450, 150, 2450, 750, 1250, 750, 1250, 650, 1050, 650, 1050, 750 )
-
 [node name="Camera" type="Camera2D" parent="."]
+visible = false
 anchor_mode = 0
 current = true
 script = SubResource( 10 )
