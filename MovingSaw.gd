@@ -33,8 +33,10 @@ func _draw():
 	var line_color
 	if color != WHITE:
 		line_color = c.COLORS[color]
+		line_color = c.COLORS[color]
 	else:
 		line_color = Color(1,1,1)
+	print(line_color)
 	
 	var points = curve.get_baked_points()
 	var nb_points = curve.get_point_count()

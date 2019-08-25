@@ -21,4 +21,5 @@ func change_bg_color():
 
 func end_level(body):
 	if body.get_name() == "Player":
+		$LevelContent/LevelEnd/Audio.play()
 		emit_signal("level_finished")
