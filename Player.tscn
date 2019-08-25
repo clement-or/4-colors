@@ -90,7 +90,7 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=8]
 radius = 30.0
-height = 100.0
+height = 89.2837
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 39 )
