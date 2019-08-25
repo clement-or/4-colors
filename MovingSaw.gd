@@ -3,20 +3,37 @@ extends Path2D
 # Nodes
 onready var c = get_node("/root/Constants")
 onready var follow = $PathFollow2D
-onready var color = c.COLORS[$PathFollow2D/Saw.color]
 
 # Exports
-export var speed = 100
-export(bool) var is_moving = true
+export var speed = 0.5 #between 0 and 1
+export(int, "RED", "GREEN", "BLUE", "YELLOW") var color
+enum {RED,GREEN,BLUE,YELLOW}
 
 var is_moving_right = true
 
 func _ready():
+	if !color: color = RED
+	$PathFollow2D/Saw.set_color(color)
 	set_process(true)
 
 func _process(delta):
-	if is_moving :
-		follow.offset = follow.offset + speed*delta
+	if is_moving_right:
+		follow.unit_offset = follow.unit_offset-speed*delta
+	else:
+		follow.unit_offset = follow.unit_offset+speed*delta
+		
+	if follow.unit_offset >= 1:
+		follow.unit_offset = 1
+		is_moving_right = !is_moving_right
+	elif follow.unit_offset <= 0:
+		follow.unit_offset = 0
+		is_moving_right = !is_moving_right
 
 func _draw():
-	draw_polyline(curve.get_baked_points(), color, 2.0)
+	var line_color = c.COLORS[color]
+	var points = curve.get_baked_points()
+	var nb_points = curve.get_point_count()
+	
+	for index_point in range(nb_points):
+		draw_line(points[index_point-1], points[index_point], line_color, 15)
+		print (line_color)

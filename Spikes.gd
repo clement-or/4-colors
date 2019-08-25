@@ -5,7 +5,6 @@ onready var c = get_node("/root/Constants")
 onready var hitbox = $Hitbox
 
 export(int, "RED", "GREEN", "BLUE", "YELLOW") var color
-enum {RED, GREEN, BLUE, YELLOW}
 
 enum {
 	ENABLED
@@ -14,7 +13,8 @@ enum {
 var current_state = ENABLED
 
 func _ready():
-	if !color: color = RED
+	if !color: color = 0
+	$AnimatedSprite.animation = String(color)
 	if is_bg_color():
 		disable()
 
@@ -38,5 +38,6 @@ func enable():
 		current_state = ENABLED
 
 func _on_Spikes_body_entered(body):
-	if body.get_name() == "Player":
+	if body.get_name() == "Player" && !body.is_dead:
+		$Audio.play()
 		body.die()

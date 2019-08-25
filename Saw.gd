@@ -15,6 +15,7 @@ var current_state = ENABLED
 
 func _ready():
 	if !color: color = RED
+	set_color(color)
 	if is_bg_color():
 		disable()
 
@@ -38,5 +39,10 @@ func enable():
 		current_state = ENABLED
 
 func _on_Saw_body_entered(body):
-	if body.get_name() == "Player":
+	if body.get_name() == "Player" && !body.is_dead:
+		$Audio.play()
 		body.die()
+
+func set_color(c):
+	color = c
+	$AnimatedSprite.animation = String(c)

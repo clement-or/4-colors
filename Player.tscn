@@ -1,22 +1,124 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://character_temp.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/character/g/perso_run_v_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_6.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_7.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/character/b/perso_stat_b_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/character/y/run/perso_run_j_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/character/y/run/perso_run_j_2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/character/y/run/perso_run_j_3.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/character/y/run/perso_run_j_4.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/character/y/run/perso_run_j_5.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/character/y/run/perso_run_j_6.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/character/y/run/perso_run_j_7.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/character/r/character_temp.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/character/b/run/perso_run_b_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/character/b/run/perso_run_b_2.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/character/b/run/perso_run_b_3.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/character/b/run/perso_run_b_4.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/character/b/run/perso_run_b_5.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/character/b/run/perso_run_b_6.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/character/b/run/perso_run_b_7.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/character/r/run/perso_run_1.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/character/r/run/perso_run_2.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/character/r/run/perso_run_3.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/character/r/run/perso_run_4.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/character/r/run/perso_run_5.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/character/r/run/perso_run_6.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/character/r/run/perso_run_7.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_1.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/character/y/perso_stat_j_1.png" type="Texture" id=33]
+[ext_resource path="res://assets/audio/jump.wav" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/change_color.wav" type="AudioStream" id=35]
+[ext_resource path="res://assets/audio/change_level.wav" type="AudioStream" id=36]
+[ext_resource path="res://assets/audio/lose.wav" type="AudioStream" id=37]
+<<<<<<< HEAD
+=======
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 23.0433, 53.1188 )
+>>>>>>> dev
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "g_run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "b_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "y_run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "r_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "b_run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "r_run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "g_idle",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "y_idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33.1161, 76.9038 )
 
 [node name="Player" type="KinematicBody2D"]
 collision/safe_margin = 0.01
 script = ExtResource( 1 )
 
-[node name="Camera" type="Camera2D" parent="."]
-visible = false
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -5.82361, -10.0295 )
-scale = Vector2( 0.405973, 0.405973 )
-texture = ExtResource( 2 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "r_idle"
+playing = true
+offset = Vector2( 0, -8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 34 )
+bus = "Player"
+
+[node name="ChangeColor" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 35 )
+bus = "Player"
+
+[node name="ChangeLevel" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 36 )
+bus = "Player"
+
+[node name="Lose" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 37 )
+bus = "Player"
+
+[node name="RestartTimer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="RestartTimer" to="." method="restart_level"]

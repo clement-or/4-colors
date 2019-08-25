@@ -4,33 +4,17 @@
 [ext_resource path="res://Saw.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Curve2D" id=1]
-
-bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 118.999, -0.255661, 0, 0, 0, 0, 0.0130424, 0.0136137 )
 }
 
 [node name="MovingSaw" type="Path2D"]
-
-self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 script = ExtResource( 1 )
-speed = 100
-is_moving = true
+color = 1
 
-[node name="PathFollow2D" type="PathFollow2D" parent="." index="0"]
-
-position = Vector2( 0.0824852, 0.0136137 )
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 118.999, -0.255661 )
 rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
 
-[node name="Saw" parent="PathFollow2D" index="0" instance=ExtResource( 2 )]
-
-_sections_unfolded = [ "Transform" ]
-
-
+[node name="Saw" parent="PathFollow2D" instance=ExtResource( 2 )]
