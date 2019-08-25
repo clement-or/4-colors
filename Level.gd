@@ -16,7 +16,6 @@ func change_bg_color():
 	# Color change
 	c.color_index = (c.color_index+1)%4
 	bg.color = c.COLORS[c.color_index]
-	fg.color = bg.color
 
 func _on_End_body_entered(body):
 	if body.get_name() == "Player":

@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
-uniform vec4 c_solid = vec4(1.,0.,0.,1.);
-uniform vec4 c_background = vec4(.08,.28,.01,1.);    //#144702
+uniform vec4 c_solid = vec4(1.,0.,1.,1.);
+uniform vec4 c_background = vec4(0.89412, 0.09020, 0.30980,1.);    //#144702
 
 
 void fragment(){
