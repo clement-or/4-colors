@@ -5,10 +5,16 @@
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MovingSaw.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sprites/floor_tileset.png" type="Texture" id=5]
+<<<<<<< HEAD
 [ext_resource path="res://Saw.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/audio/music.ogg" type="AudioStream" id=8]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
+=======
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/audio/music.ogg" type="AudioStream" id=7]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=8]
+>>>>>>> dev
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 21, 50, 21, 50, 29, 0, 29 )
@@ -126,10 +132,17 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 5/z_index = 0
 
+<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 0.596523, 2.48526 )
 
 [sub_resource type="GDScript" id=9]
+=======
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 0.596523, 2.48526 )
+
+[sub_resource type="GDScript" id=8]
+>>>>>>> dev
 script/source = "extends Camera2D
 "
 
@@ -181,12 +194,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelContent/End"]
+<<<<<<< HEAD
 shape = SubResource( 8 )
 
 [node name="Saw" parent="LevelContent" instance=ExtResource( 6 )]
 position = Vector2( 375, 350 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
+=======
+shape = SubResource( 9 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+>>>>>>> dev
 position = Vector2( 175, 600 )
 
 [node name="Foreground" type="Polygon2D" parent="."]
@@ -194,19 +213,29 @@ position = Vector2( -550, -50 )
 polygon = PoolVector2Array( 603.72, 754.341, 996.072, 754.052, 995.829, 904.064, 1254.08, 904.215, 1254.06, 754.162, 1853.58, 754.236, 1850.84, 1055.04, 603.527, 1071.69 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+<<<<<<< HEAD
 stream = ExtResource( 8 )
+=======
+stream = ExtResource( 7 )
+>>>>>>> dev
 volume_db = -6.0
 autoplay = true
 
 [node name="Camera" type="Camera2D" parent="."]
+visible = false
 anchor_mode = 0
 current = true
-script = SubResource( 9 )
+script = SubResource( 8 )
 
+<<<<<<< HEAD
 [node name="HUD" parent="Camera" instance=ExtResource( 9 )]
+=======
+[node name="HUD" parent="Camera" instance=ExtResource( 8 )]
+>>>>>>> dev
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1920.0
+margin_left = -350.0
+margin_right = 1570.0
 margin_bottom = 1080.0
 [connection signal="body_entered" from="LevelContent/End" to="." method="_on_End_body_entered"]
 [connection signal="color_changed" from="Player" to="." method="change_bg_color"]

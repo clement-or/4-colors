@@ -37,6 +37,10 @@
 [ext_resource path="res://assets/audio/change_color.wav" type="AudioStream" id=35]
 [ext_resource path="res://assets/audio/change_level.wav" type="AudioStream" id=36]
 [ext_resource path="res://assets/audio/lose.wav" type="AudioStream" id=37]
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
