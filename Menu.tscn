@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ Vector2( -35, 0 ), Vector2( -40, 10 ), Vector2( -35, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "hover"
 length = 0.3
 tracks/0/type = "value"
@@ -55,7 +55,7 @@ tracks/0/keys = {
 "values": [ Color( 0.909804, 0.211765, 0.403922, 1 ), Color( 0.905882, 0.0980392, 0.321569, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 75
 font_data = ExtResource( 2 )
 
@@ -238,12 +238,12 @@ color = Color( 0.905882, 0.0980392, 0.321569, 1 )
 
 [node name="Anim" type="AnimationPlayer" parent="Buttons/Play/ColorRect"]
 anims/click = SubResource( 4 )
-anims/hover = SubResource( 6 )
+anims/hover = SubResource( 5 )
 
 [node name="Play" type="Button" parent="Buttons/Play"]
 margin_right = 700.0
 margin_bottom = 153.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "PLAY"
 flat = true
 align = 0
@@ -274,7 +274,7 @@ anims/hover = SubResource( 8 )
 [node name="Credits" type="Button" parent="Buttons/Credits"]
 margin_right = 700.0
 margin_bottom = 153.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "CREDITS"
 flat = true
 align = 0
