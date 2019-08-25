@@ -1,8 +1,7 @@
 extends Node2D
 
 const LEVELS = [
-	preload("res://Level.tscn"),
-	preload("res://Level2.tscn")
+	preload("res://Level.tscn")
 ]
 var current_level_nb = 0
 var current_level_inst

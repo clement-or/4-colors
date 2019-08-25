@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character_temp.png-83ec94ef2ec7f122e747364ddf79ef3e.stex"
+path="res://.import/fall.png-663bb510ec2906918ebb479a6c23563f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/character/r/character_temp.png"
-dest_files=[ "res://.import/character_temp.png-83ec94ef2ec7f122e747364ddf79ef3e.stex" ]
+source_file="res://assets/sprites/character/fall.png"
+dest_files=[ "res://.import/fall.png-663bb510ec2906918ebb479a6c23563f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
