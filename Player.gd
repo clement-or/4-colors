@@ -6,6 +6,7 @@ var motion = Vector2(0,0)
 export var gravity = 20
 export var y_speed = 700
 export var x_speed = 500
+export var back_size = 4000
 
 var is_dead = false
 
@@ -25,7 +26,7 @@ onready var sfx = {
 	}
 
 func _ready():
-	pass
+	$Sprite.texture.size = Vector2(back_size, back_size)
 
 func _physics_process(delta):
 	if !is_dead:
@@ -47,8 +48,8 @@ func check_controls():
 		$AnimatedSprite.flip_h = true
 		if is_on_floor(): current_state = RUN
 	if motion.x != 0 && !(Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
-		if motion.x > 0: motion.x -= motion.x/3
-		elif motion.x < 0: motion.x -= motion.x/3
+		if motion.x > 0: motion.x -= motion.x/2
+		elif motion.x < 0: motion.x -= motion.x/2
 	motion.x = clamp(motion.x, -x_speed, x_speed)
 	
 	# Vertical input

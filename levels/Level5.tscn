@@ -169,16 +169,16 @@ scale = Vector2( 2, 0.5 )
 color = 1
 
 [node name="Platform7" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 1237.5, 1050 )
+position = Vector2( 1144.54, 1050 )
 scale = Vector2( 0.25, 2 )
 
 [node name="Platform8" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 1062.5, 1050 )
+position = Vector2( 973.153, 1050 )
 scale = Vector2( 0.25, 2 )
 color = 1
 
 [node name="Platform9" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 887.5, 1050 )
+position = Vector2( 806.275, 1050 )
 scale = Vector2( 0.25, 2 )
 color = 2
 

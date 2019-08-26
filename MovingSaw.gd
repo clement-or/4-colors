@@ -23,13 +23,13 @@ func _process(delta):
 	else:
 		follow.unit_offset = follow.unit_offset+speed*delta
 		
-	if follow.unit_offset >= 1:
-		follow.unit_offset = 1
+	if follow.unit_offset > 0.9:
+		follow.unit_offset = 0.9
 		is_moving_right = !is_moving_right
-	elif follow.unit_offset <= 0:
-		follow.unit_offset = 0
+	elif follow.unit_offset < 0.1:
+		follow.unit_offset = 0.1
 		is_moving_right = !is_moving_right
-
+		
 func _draw():
 	var line_color
 	if color != WHITE:
@@ -40,4 +40,4 @@ func _draw():
 	
 	var points = curve.get_baked_points()
 	var nb_points = curve.get_point_count()
-	draw_polyline(points,Color(1,1,1,1),50.0)
+	draw_polyline(points,line_color,5.0)

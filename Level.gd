@@ -11,6 +11,7 @@ signal level_restarted
 func _ready():
 	$Player.is_dead=false
 	$Player.connect("is_dead", self, "restart")
+	$Player.connect("color_changed", $Camera/HUD/Colors/Wheel, "next_color")
 	c.color_index=3
 	change_bg_color()
 
@@ -32,3 +33,6 @@ func end_level(body):
 
 func restart():
 	emit_signal("level_restarted")
+
+func set_level_counter(current, the_max):
+	$Camera/HUD.set_level_counter(current, the_max)
