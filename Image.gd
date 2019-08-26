@@ -21,3 +21,6 @@ func anim_finished(anim):
 	elif anim == "fade_out":
 		visible  = false
 		emit_signal("fade_out_finished")
+
+func stop():
+	$Anim.stop(true)
