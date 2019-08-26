@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://End.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/permanent_marker.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/PermanentMarker-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Overlay.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/audio/intro.ogg" type="AudioStream" id=5]
 [ext_resource path="res://assets/audio/easter.ogg" type="AudioStream" id=6]
 
-[sub_resource type="Animation" id=1]
-resource_name = "easter"
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
 length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
@@ -38,7 +41,7 @@ tracks/1/keys = {
 "values": [ 5, 26, -1, -1 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "pause"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
@@ -66,11 +69,11 @@ tracks/1/keys = {
 "values": [ -1 ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 150
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:volume_db")
 tracks/0/interp = 1
@@ -105,22 +108,21 @@ margin_left = 500.0
 margin_top = 100.0
 margin_right = 1423.0
 margin_bottom = 361.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "You did it !
 WHEX is free"
 align = 1
-percent_visible = -0.0526316
 
 [node name="Anim" type="AnimationPlayer" parent="Text/Label"]
-anims/easter = SubResource( 1 )
-anims/pause = SubResource( 4 )
+anims/easter = SubResource( 2 )
+anims/pause = SubResource( 3 )
 
 [node name="Label2" type="Label" parent="Text"]
 margin_left = 500.0
 margin_top = 650.0
 margin_right = 1475.0
 margin_bottom = 911.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "the end"
 align = 1
 
@@ -134,7 +136,7 @@ volume_db = -80.0
 autoplay = true
 
 [node name="Anim" type="AnimationPlayer" parent="Music"]
-anims/fade_in = SubResource( 3 )
+anims/fade_in = SubResource( 5 )
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )

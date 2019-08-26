@@ -161,6 +161,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+speed = 700
 
 [node name="PathFollow2D" type="PathFollow2D" parent="LevelContent/MovingSaw"]
 editor/display_folded = true
@@ -178,6 +179,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+speed = 700
 color = 1
 
 [node name="PathFollow2D" type="PathFollow2D" parent="LevelContent/MovingSaw2"]

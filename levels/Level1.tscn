@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
-[ext_resource path="res://LevelEnd.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://LevelEnd.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/floor_tileset.png" type="Texture" id=4]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=6]
@@ -151,26 +151,26 @@ polygon = PoolVector2Array( 1000, 800, 1000, 750, 850, 750, 850, 800 )
 
 [node name="LevelContent" type="Node2D" parent="."]
 
-[node name="LevelEnd" parent="LevelContent" instance=ExtResource( 2 )]
-position = Vector2( 1650, 600 )
-
-[node name="Platform" parent="LevelContent" instance=ExtResource( 3 )]
+[node name="Platform" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 800, 712.5 )
 scale = Vector2( 7, 0.25 )
 
-[node name="Platform4" parent="LevelContent" instance=ExtResource( 3 )]
+[node name="Platform4" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 1250, 712.5 )
 scale = Vector2( 2, 0.25 )
 color = 1
 
-[node name="Platform2" parent="LevelContent" instance=ExtResource( 3 )]
+[node name="Platform2" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 1361.68, 450 )
 scale = Vector2( 0.25, 5 )
 
-[node name="Platform3" parent="LevelContent" instance=ExtResource( 3 )]
+[node name="Platform3" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 1650, 583.429 )
 scale = Vector2( 1.97, 2.32 )
 color = 3
+
+[node name="LevelEnd" parent="LevelContent" instance=ExtResource( 3 )]
+position = Vector2( 1650, 600 )
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
 tile_set = SubResource( 7 )
