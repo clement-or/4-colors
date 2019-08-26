@@ -16,23 +16,18 @@ var current_level_nb = 0
 var current_level_inst
 
 func _ready():
-	$Music/Anim.play("fade_in")
 	load_level(0)
 
 func _process(delta):
 	pass
 
 func load_level(nb):
-	$Overlay.fade_out()
 	current_level_inst = LEVELS[nb].instance()
-	add_child_below_node($Music,current_level_inst)
+	add_child(current_level_inst)
 	current_level_inst.connect("level_finished", self, "next_level")
 	current_level_inst.connect("level_restarted", self, "restart_current_level")
 
 func next_level():
-	$Overlay.fade_in()
-
-func next_level_finished():
 	call_deferred("remove_child",current_level_inst)
 	current_level_nb += 1
 	call_deferred("load_level",current_level_nb)

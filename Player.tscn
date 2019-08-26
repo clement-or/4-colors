@@ -3,10 +3,10 @@
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Character_Shader.shader" type="Shader" id=2]
 [ext_resource path="res://assets/sprites/character/b/jump.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/character/die/death_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/character/die/death_2.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/character/g/fall.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/character/y/jump.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/character/g/fall.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/character/y/jump.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/character/die/death_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/character/die/death_2.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/character/r/jump.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/character/g/run/perso_stat_v_1.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/character/g/perso_run_v_1.png" type="Texture" id=10]
@@ -62,19 +62,19 @@ animations = [ {
 "name": "b_jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), null ],
-"loop": false,
-"name": "die",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "g_fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "y_jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), null ],
+"loop": false,
+"name": "die",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
