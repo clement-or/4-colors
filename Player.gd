@@ -6,10 +6,12 @@ var motion = Vector2(0,0)
 export var gravity = 20
 export var y_speed = 700
 export var x_speed = 500
+export var back_size = 4000
 
 var is_dead = false
 
 signal color_changed
+signal is_dead
 
 enum {RED, GREEN, BLUE, YELLOW}
 enum {RUN, IDLE, JUMP, FALL, DIE}
@@ -24,7 +26,7 @@ onready var sfx = {
 	}
 
 func _ready():
-	pass
+	$Sprite.texture.size = Vector2(back_size, back_size)
 
 func _physics_process(delta):
 	if !is_dead:
@@ -36,6 +38,7 @@ func _physics_process(delta):
 
 func check_controls():
 	# Horizontal input
+	if is_on_floor(): current_state = IDLE
 	if (Input.is_action_pressed("ui_right")):
 		motion.x += x_speed/3
 		$AnimatedSprite.flip_h = false
@@ -44,9 +47,9 @@ func check_controls():
 		motion.x -= x_speed/3
 		$AnimatedSprite.flip_h = true
 		if is_on_floor(): current_state = RUN
-	elif (Input.is_action_just_released("ui_left") || Input.is_action_just_released("ui_right")):
-		motion.x = 0
-		current_state = IDLE
+	if motion.x != 0 && !(Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
+		if motion.x > 0: motion.x -= motion.x/2
+		elif motion.x < 0: motion.x -= motion.x/2
 	motion.x = clamp(motion.x, -x_speed, x_speed)
 	
 	# Vertical input
@@ -61,32 +64,43 @@ func check_controls():
 		current_color = (current_color+1)%4
 		play_sound("change_color")
 		emit_signal("color_changed")
+	
+	# States and tweaks
+	if motion.y > 100:
+		current_state = FALL 
+	if Input.is_action_just_released("ui_left") || Input.is_action_just_released("ui_right"):
+		current_state = IDLE
 
 func jump():
+	current_state = JUMP
 	motion.y = -y_speed
 
 func stop_jump():
 	if motion.y < 0:
 		motion.y += -0.5*motion.y
+		current_state = FALL
 
 func apply_gravity():
 	motion.y += gravity
 	
 func die():
+	current_state = DIE
 	is_dead = true
 	motion = Vector2(0,0)
 	play_sound("lose")
 	$RestartTimer.start()
 	
-
 func play_sound(sound):
 	sfx[sound].play()
 
 func restart_level():
-	get_tree().reload_current_scene()
+	emit_signal("is_dead")
 
 func set_animation():
-	if current_color == RED:
+	if current_state == DIE:
+		$AnimatedSprite.animation = "die"
+		
+	elif current_color == RED:
 		if current_state == IDLE:
 			$AnimatedSprite.animation = "r_idle"
 		elif current_state == RUN:
@@ -95,8 +109,6 @@ func set_animation():
 			$AnimatedSprite.animation = "r_jump"
 		elif current_state == FALL:
 			$AnimatedSprite.animation = "r_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"
 			
 	elif current_color == GREEN:
 		if current_state == IDLE:
@@ -107,8 +119,6 @@ func set_animation():
 			$AnimatedSprite.animation = "g_jump"
 		elif current_state == FALL:
 			$AnimatedSprite.animation = "g_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"
 			
 	elif current_color == BLUE:
 		if current_state == IDLE:
@@ -119,8 +129,6 @@ func set_animation():
 			$AnimatedSprite.animation = "b_jump"
 		elif current_state == FALL:
 			$AnimatedSprite.animation = "b_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "b_die"
 			
 	elif current_color == YELLOW:
 		if current_state == IDLE:
@@ -131,5 +139,3 @@ func set_animation():
 			$AnimatedSprite.animation = "y_jump"
 		elif current_state == FALL:
 			$AnimatedSprite.animation = "y_fall"
-		elif current_state == DIE:
-			$AnimatedSprite.animation = "y_die"
