@@ -10,34 +10,34 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
 
-[sub_resource type="Curve2D" id=11]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 125, 0, 0, 0, 0, 0, -625, 0 )
 }
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=2]
 size = 25
 font_data = ExtResource( 5 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 21, 50, 21, 50, 29, 0, 29 )
 
-[sub_resource type="ConvexPolygonShape2D" id=14]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 21, 0, 29, 0, 29, 50, 21, 50 )
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 21, 0, 29, 0, 29, 21, 50, 21, 50, 29, 21, 29 )
 
-[sub_resource type="ConvexPolygonShape2D" id=16]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 21, 21, 21, 0, 29, 0, 29, 29, 0, 29, 0, 21 )
 
-[sub_resource type="ConvexPolygonShape2D" id=17]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 21, 21, 50, 21, 50, 29, 29, 29, 29, 50, 21, 50 )
 
-[sub_resource type="ConvexPolygonShape2D" id=18]
+[sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 
-[sub_resource type="TileSet" id=19]
+[sub_resource type="TileSet" id=9]
 0/name = "floor_tileset.png 0"
 0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
@@ -50,7 +50,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -66,7 +66,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 14 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -82,7 +82,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 15 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -98,7 +98,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 16 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -114,7 +114,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 17 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
@@ -130,7 +130,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 18 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
@@ -172,7 +172,7 @@ color = 1
 
 [node name="MovingSaw" type="Path2D" parent="LevelContent"]
 position = Vector2( 1375, 250 )
-curve = SubResource( 11 )
+curve = SubResource( 1 )
 script = ExtResource( 4 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="LevelContent/MovingSaw"]
@@ -186,7 +186,7 @@ margin_left = 175.0
 margin_top = 100.0
 margin_right = 834.0
 margin_bottom = 175.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 2 )
 text = "Is this a circular saw ? It looks pretty dangerous ! 
 Do not try to hug it !"
 align = 1
@@ -197,7 +197,7 @@ margin_top = 100.0
 margin_right = 1211.0
 margin_bottom = 136.0
 rect_scale = Vector2( 1.90607, 2.21773 )
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.894118, 0.0901961, 0.309804, 1 )
 text = "OH NO ITS MOVING !!!!"
 align = 1
@@ -207,7 +207,7 @@ margin_left = 850.0
 margin_top = 300.0
 margin_right = 1509.0
 margin_bottom = 375.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.894118, 0.0901961, 0.309804, 1 )
 text = "( don't mind the graphic bug pls, it's harmless )"
 align = 1
@@ -218,7 +218,7 @@ scale = Vector2( 1.49999, 0.2 )
 color = 2
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
-tile_set = SubResource( 19 )
+tile_set = SubResource( 9 )
 cell_size = Vector2( 50, 50 )
 cell_tile_origin = 1
 format = 1

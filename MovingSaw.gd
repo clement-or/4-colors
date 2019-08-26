@@ -29,15 +29,3 @@ func _process(delta):
 	elif follow.unit_offset <= 0:
 		follow.unit_offset = 0
 		is_moving_right = !is_moving_right
-
-func _draw():
-	var line_color
-	if color != WHITE:
-		line_color = c.COLORS[color]
-		line_color = c.COLORS[color]
-	else:
-		line_color = Color(1,1,1)
-	
-	var points = curve.get_baked_points()
-	var nb_points = curve.get_point_count()
-	draw_polyline(points,Color(1,1,1,1),50.0)

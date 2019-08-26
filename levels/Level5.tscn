@@ -169,16 +169,16 @@ scale = Vector2( 2, 0.5 )
 color = 1
 
 [node name="Platform7" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 1237.5, 1050 )
+position = Vector2( 1087.5, 1050 )
 scale = Vector2( 0.25, 2 )
 
 [node name="Platform8" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 1062.5, 1050 )
+position = Vector2( 962.5, 1050 )
 scale = Vector2( 0.25, 2 )
 color = 1
 
 [node name="Platform9" parent="LevelContent" instance=ExtResource( 3 )]
-position = Vector2( 887.5, 1050 )
+position = Vector2( 837.5, 1050 )
 scale = Vector2( 0.25, 2 )
 color = 2
 
@@ -200,7 +200,7 @@ position = Vector2( 1303.58, 1150 )
 color = 3
 
 [node name="Spikes12" parent="LevelContent" instance=ExtResource( 4 )]
-position = Vector2( 750, 1150 )
+position = Vector2( 650, 1150 )
 color = 1
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
