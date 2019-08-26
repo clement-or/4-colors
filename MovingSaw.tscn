@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 118.999, -0.255661, 0, 0, 0, 0, 0.0130424, 0.0136137 )
+"points": PoolVector2Array( 0, 0, 0, 0, 118.999, -0.255661, 0, 0, 0, 0, -325, -0.0136719 )
 }
 
 [node name="MovingSaw" type="Path2D"]

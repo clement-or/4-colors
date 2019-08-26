@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Character_Shader.shader" type="Shader" id=2]
-[ext_resource path="res://assets/sprites/character/b/jump.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/character/die/death_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/character/die/death_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/character/die/death_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/character/die/death_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/character/b/jump.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/character/g/fall.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/character/y/jump.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/character/r/jump.png" type="Texture" id=8]
@@ -57,14 +57,14 @@ shader_param/c_background = Plane( 0.894, 0.09, 0.31, 1 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "b_jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), null ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), null ],
 "loop": false,
 "name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "b_jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],

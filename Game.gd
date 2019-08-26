@@ -20,7 +20,8 @@ func _ready():
 	load_level(0)
 
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("ui_cancel"):
+		next_level()
 
 func load_level(nb):
 	$Overlay.fade_out()
@@ -28,14 +29,18 @@ func load_level(nb):
 	add_child_below_node($Music,current_level_inst)
 	current_level_inst.connect("level_finished", self, "next_level")
 	current_level_inst.connect("level_restarted", self, "restart_current_level")
+	current_level_inst.set_level_counter(current_level_nb,LEVELS.size())
 
 func next_level():
 	$Overlay.fade_in()
 
 func next_level_finished():
 	call_deferred("remove_child",current_level_inst)
-	current_level_nb += 1
-	call_deferred("load_level",current_level_nb)
+	if current_level_nb < 9:
+		current_level_nb += 1
+		call_deferred("load_level",current_level_nb)
+	else:
+		get_tree().change_scene("res://End.tscn")
 
 func restart_current_level():
 	current_level_nb -= 1
