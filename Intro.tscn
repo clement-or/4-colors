@@ -47,39 +47,39 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=3]
 size = 50
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.733333, 0.101961, 0.14902, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.823529, 0.254902, 0.298039, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.733333, 0.101961, 0.14902, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=19]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.533333, 0.0745098, 0.109804, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="Theme" id=21]
+[sub_resource type="Theme" id=8]
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -87,16 +87,16 @@ Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = null
-Button/styles/focus = SubResource( 16 )
-Button/styles/hover = SubResource( 17 )
-Button/styles/normal = SubResource( 18 )
-Button/styles/pressed = SubResource( 19 )
+Button/styles/focus = SubResource( 4 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 6 )
+Button/styles/pressed = SubResource( 7 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=9]
 size = 25
 font_data = ExtResource( 13 )
 
-[sub_resource type="Theme" id=20]
+[sub_resource type="Theme" id=10]
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -104,12 +104,12 @@ Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = null
-Button/styles/focus = SubResource( 16 )
-Button/styles/hover = SubResource( 17 )
-Button/styles/normal = SubResource( 18 )
-Button/styles/pressed = SubResource( 19 )
+Button/styles/focus = SubResource( 4 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 6 )
+Button/styles/pressed = SubResource( 7 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=11]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:volume_db")
@@ -124,7 +124,7 @@ tracks/0/keys = {
 "values": [ -80.0, -6.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=12]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:volume_db")
@@ -223,7 +223,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Camera2D/Popup/Panel/VBoxContainer"]
 margin_right = 173.0
 margin_bottom = 72.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 3 )
 text = "SKIP ?"
 align = 1
 
@@ -232,8 +232,8 @@ margin_top = 76.0
 margin_right = 173.0
 margin_bottom = 112.0
 focus_mode = 0
-theme = SubResource( 21 )
-custom_fonts/font = SubResource( 15 )
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 enabled_focus_mode = 0
 text = "YES"
 
@@ -242,8 +242,8 @@ margin_top = 116.0
 margin_right = 173.0
 margin_bottom = 152.0
 focus_mode = 0
-theme = SubResource( 20 )
-custom_fonts/font = SubResource( 15 )
+theme = SubResource( 10 )
+custom_fonts/font = SubResource( 9 )
 enabled_focus_mode = 0
 text = "No"
 
@@ -253,8 +253,8 @@ volume_db = -80.0
 autoplay = true
 
 [node name="Anim" type="AnimationPlayer" parent="Audio"]
-anims/fade_in = SubResource( 6 )
-anims/fade_out = SubResource( 7 )
+anims/fade_in = SubResource( 11 )
+anims/fade_out = SubResource( 12 )
 [connection signal="animation_finished" from="Image8/Anim" to="Image8" method="anim_finished"]
 [connection signal="pressed" from="Camera2D/Popup/Panel/VBoxContainer/Yes" to="." method="_on_Yes_pressed"]
 [connection signal="pressed" from="Camera2D/Popup/Panel/VBoxContainer/No" to="." method="_on_No_pressed"]

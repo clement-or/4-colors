@@ -348,7 +348,6 @@ flat = true
 align = 0
 
 [node name="CreditsPopup" type="Popup" parent="."]
-editor/display_folded = true
 margin_left = -8.0
 margin_top = 400.0
 margin_right = 2100.0
