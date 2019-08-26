@@ -127,7 +127,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 } ]
 5/z_index = 0
 
-[sub_resource type="GDScript" id=8]
+[sub_resource type="GDScript" id=9]
 script/source = "extends Camera2D
 "
 
@@ -182,7 +182,7 @@ color = 3
 position = Vector2( 369.153, 350 )
 
 [node name="Saw3" parent="LevelContent" instance=ExtResource( 5 )]
-position = Vector2( 550, 350 )
+position = Vector2( 525, 350 )
 color = 1
 
 [node name="Saw4" parent="LevelContent" instance=ExtResource( 5 )]
@@ -199,7 +199,6 @@ color = 4
 
 [node name="MovingSaw" parent="LevelContent" instance=ExtResource( 6 )]
 position = Vector2( 600, 474.377 )
-color = 4
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
 tile_set = SubResource( 7 )
@@ -219,7 +218,7 @@ autoplay = true
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
-script = SubResource( 8 )
+script = SubResource( 9 )
 
 [node name="HUD" parent="Camera" instance=ExtResource( 10 )]
 anchor_right = 0.0
