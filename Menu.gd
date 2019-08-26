@@ -5,8 +5,9 @@ func _ready():
 
 func _on_Play_pressed():
 	$Buttons/Play/ColorRect/Anim.play("click")
-	get_tree().change_scene("res://Game.tscn")
 	button_accept()
+	$Audio/Music/Anim.play("fade_out")
+	$Overlay.fade_in()
 
 func _on_Credits_pressed():
 	$Buttons/Credits/ColorRect/Anim.play("click")
@@ -25,3 +26,6 @@ func button_cancel():
 
 func button_hover():
 	$Audio/Hover.play()
+
+func _on_Overlay_fade_in_finished():
+	get_tree().change_scene("res://Game.tscn")

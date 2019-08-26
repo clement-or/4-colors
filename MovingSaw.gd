@@ -15,6 +15,7 @@ func _ready():
 	if !color: color = RED
 	$PathFollow2D/Saw.set_color(color)
 	set_process(true)
+	
 
 func _process(delta):
 	if is_moving_right:
@@ -36,11 +37,7 @@ func _draw():
 		line_color = c.COLORS[color]
 	else:
 		line_color = Color(1,1,1)
-	print(line_color)
 	
 	var points = curve.get_baked_points()
 	var nb_points = curve.get_point_count()
-	
-	for index_point in range(nb_points):
-		draw_line(points[index_point-1], points[index_point], line_color, 15)
-		print (line_color)
+	draw_polyline(points,Color(1,1,1,1),50.0)

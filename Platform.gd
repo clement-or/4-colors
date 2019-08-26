@@ -36,8 +36,8 @@ func is_bg_color():
 func disable():
 	if current_state != DISABLED:
 		hitbox.set_deferred("disabled",true)
-		current_state = DISABLED
 		$ColorRect.hide()
+		current_state = DISABLED
 
 func enable():
 	if current_state != ENABLED:
@@ -46,9 +46,10 @@ func enable():
 		$ColorRect.show()
 
 func overlap():
-	if current_state != OVERLAPPED:
+	if current_state == OVERLAPPED:
 		hitbox.set_deferred("disabled",true)
 		current_state = OVERLAPPED
+		$ColorRect.show()
 
 func _on_overlap(body):
 	if body.get_name() == "Player":
