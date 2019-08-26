@@ -125,6 +125,7 @@ rect_pivot_offset = Vector2( 1511, 1510.37 )
 color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 
 [node name="TitleBg" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1925.0
 margin_bottom = 400.0
 
@@ -191,6 +192,7 @@ margin_right = 2400.0
 margin_bottom = 1012.0
 
 [node name="Title" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -246,6 +248,7 @@ text = "Journey"
 valign = 1
 
 [node name="bottom" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 1477.0
 margin_top = 866.37
 margin_right = 1517.0
@@ -481,6 +484,7 @@ custom_fonts/font = SubResource( 13 )
 text = "X"
 
 [node name="Audio" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Accept" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 5 )
