@@ -5,13 +5,12 @@ onready var c = get_node("/root/Constants")
 onready var follow = $PathFollow2D
 
 # Exports
-export var speed_multiplier = 1 #pixels/s
+export var speed = 200
 export(int, "RED", "GREEN", "BLUE", "YELLOW", "WHITE") var color
 enum {RED,GREEN,BLUE,YELLOW,WHITE}
 
-var is_moving_right = true
+var is_moving_right = false
 var length
-var t = 0
 
 func _ready():
 	if !color: color = RED
@@ -19,12 +18,19 @@ func _ready():
 	set_process(true)
 	length = curve.get_baked_length()
 	
-var off
+var off = 1
 func _process(delta):
-	t += delta*500
-	off = (length/2)*cos((((PI/2))*(speed_multiplier/length)*t)+PI)+(length/2)
-	if off < 1:
+	if !is_moving_right:
+		off += delta*speed
+	else: 
+		off -= delta*speed
+	
+	if off >= length-1:
+		off = length-1
+		is_moving_right = true
+	elif off < 1:
 		off = 1
+		is_moving_right = false
 	follow.offset = off
 		
 func _draw():
