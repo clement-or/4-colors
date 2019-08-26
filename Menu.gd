@@ -28,4 +28,4 @@ func button_hover():
 	$Audio/Hover.play()
 
 func _on_Overlay_fade_in_finished():
-	get_tree().change_scene("res://Game.tscn")
+	get_tree().change_scene("res://Intro.tscn")
