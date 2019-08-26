@@ -187,10 +187,10 @@ position = Vector2( 1325, 600 )
 position = Vector2( 1275, 600 )
 
 [node name="MovingSaw" type="Path2D" parent="LevelContent"]
-editor/display_folded = true
 position = Vector2( 1175, 500 )
 curve = SubResource( 1 )
 script = ExtResource( 5 )
+speed = 300
 color = 1
 
 [node name="PathFollow2D" type="PathFollow2D" parent="LevelContent/MovingSaw"]
@@ -204,7 +204,7 @@ color = 4
 position = Vector2( 1850, 825 )
 curve = SubResource( 2 )
 script = ExtResource( 5 )
-speed = 0.4
+speed = 700
 color = 4
 
 [node name="PathFollow2D" type="PathFollow2D" parent="LevelContent/MovingSaw2"]
@@ -224,7 +224,7 @@ scale = Vector2( 0.25, 2.5 )
 color = 2
 
 [node name="Platform3" parent="LevelContent" instance=ExtResource( 6 )]
-position = Vector2( 937.5, 775 )
+position = Vector2( 941.787, 775 )
 scale = Vector2( 0.25, 2.5 )
 color = 3
 

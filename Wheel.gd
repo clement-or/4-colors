@@ -13,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	if int(rect_rotation)%360 != int(new_rotation)%360:
-		rect_rotation = (int(rect_rotation-5))%360
+		rect_rotation = (int(rect_rotation-15))%360
 
 func next_color():
 	i = (i+1)%4
