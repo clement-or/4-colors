@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/floor_tileset.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/audio/music.ogg" type="AudioStream" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 21, 50, 21, 50, 29, 0, 29 )
@@ -180,10 +179,5 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1920.0
 margin_bottom = 1080.0
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = -6.0
-autoplay = true
 [connection signal="body_entered" from="LevelContent/End" to="." method="_on_End_body_entered"]
 [connection signal="color_changed" from="Player" to="." method="change_bg_color"]
