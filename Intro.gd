@@ -9,7 +9,8 @@ onready var FRAMES = [
 	$Image5, 
 	$Image6, 
 	$Image7, 
-	$Image8
+	$Image8,
+	$Image9
 ]
 
 func _ready():

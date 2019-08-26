@@ -1,51 +1,31 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Ending.gd" type="Script" id=1]
 [ext_resource path="res://Image.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/intro/img1.jpg" type="Texture" id=3]
-[ext_resource path="res://assets/intro/img_2.jpeg" type="Texture" id=4]
-[ext_resource path="res://assets/intro/img_3.jpeg" type="Texture" id=5]
-[ext_resource path="res://assets/intro/img_4.jpeg" type="Texture" id=6]
-[ext_resource path="res://assets/intro/img_5.jpeg" type="Texture" id=7]
-[ext_resource path="res://assets/intro/img_7.jpeg" type="Texture" id=8]
-[ext_resource path="res://assets/intro/img_8.jpeg" type="Texture" id=9]
-[ext_resource path="res://assets/intro/img_9.jpeg" type="Texture" id=10]
-[ext_resource path="res://Image.gd" type="Script" id=11]
-[ext_resource path="res://assets/audio/intro.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/fonts/PermanentMarker-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/intro/outro_2.jpeg" type="Texture" id=4]
+[ext_resource path="res://assets/intro/outro_3.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/audio/intro.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/easter.ogg" type="AudioStream" id=8]
+
+[sub_resource type="ImageTexture" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 90
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 200
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 150
+outline_size = 20
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=1]
-resource_name = "fade_in"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "fade_out"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 3.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:volume_db")
@@ -60,7 +40,7 @@ tracks/0/keys = {
 "values": [ -80.0, -6.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:volume_db")
@@ -87,8 +67,16 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Image1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 960, 540 )
-texture = ExtResource( 3 )
+texture = SubResource( 3 )
 is_visible = true
+
+[node name="Label" type="Label" parent="Image1"]
+margin_left = -945.0
+margin_right = 955.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 4 )
+text = "where am i...?"
+align = 1
 
 [node name="Image2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 960, 540 )
@@ -98,41 +86,48 @@ texture = ExtResource( 4 )
 position = Vector2( 960, 540 )
 texture = ExtResource( 5 )
 
-[node name="Image4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 960, 540 )
-texture = ExtResource( 6 )
+[node name="Label2" type="Label" parent="Image3"]
+margin_left = -830.748
+margin_top = -510.918
+margin_right = 1069.25
+margin_bottom = -224.918
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -20
+custom_constants/shadow_offset_y = -5
+text = "!"
 
-[node name="Image5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 960, 540 )
-texture = ExtResource( 7 )
-
-[node name="Image6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 960, 540 )
-texture = ExtResource( 8 )
-
-[node name="Image7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 960, 540 )
-texture = ExtResource( 9 )
-
-[node name="Image8" type="Sprite" parent="."]
-position = Vector2( 960, 540 )
-texture = ExtResource( 10 )
-script = ExtResource( 11 )
-
-[node name="Anim" type="AnimationPlayer" parent="Image8"]
-anims/fade_in = SubResource( 1 )
-anims/fade_out = SubResource( 2 )
+[node name="Label3" type="Label" parent="Image3"]
+margin_left = -504.22
+margin_top = 347.714
+margin_right = 1395.78
+margin_bottom = 633.714
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = -20
+custom_constants/shadow_offset_y = -5
+text = "THE END"
+align = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 7 )
 volume_db = -80.0
 autoplay = true
 
 [node name="Anim" type="AnimationPlayer" parent="Audio"]
-anims/fade_in = SubResource( 3 )
-anims/fade_out = SubResource( 4 )
-[connection signal="animation_finished" from="Image8/Anim" to="Image8" method="anim_finished"]
+anims/fade_in = SubResource( 1 )
+anims/fade_out = SubResource( 2 )
+
+[node name="Audio2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -6.0
+
+[node name="EasterEggTimeout" type="Timer" parent="."]
+wait_time = 21.0
+one_shot = true
+autostart = true
+[connection signal="timeout" from="EasterEggTimeout" to="." method="_on_EasterEggTimeout_timeout"]

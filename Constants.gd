@@ -14,6 +14,10 @@ func _ready():
 	viewport.connect("size_changed", self, "window_resize")
 	window_resize()
 
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
+
 func window_resize():
 	var current_size = OS.get_window_size()
 

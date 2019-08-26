@@ -388,7 +388,7 @@ margin_top = 24.0901
 margin_right = 910.0
 margin_bottom = 153.09
 custom_fonts/font = ExtResource( 3 )
-text = "clement topy"
+text = "Clement \"topy\" o."
 align = 1
 
 [node name="Lyrola" type="Control" parent="CreditsPopup"]
@@ -412,7 +412,7 @@ margin_top = 17.8893
 margin_right = 910.0
 margin_bottom = 220.889
 custom_fonts/font = ExtResource( 3 )
-text = "lyrola"
+text = "emilia \"lyrola\" b."
 align = 1
 
 [node name="BroZ" type="Control" parent="CreditsPopup"]
@@ -435,7 +435,7 @@ margin_top = 30.1926
 margin_right = 910.0
 margin_bottom = 233.193
 custom_fonts/font = ExtResource( 3 )
-text = "Broz"
+text = "ludovic \"BroZ\" w."
 align = 1
 
 [node name="Music" type="Control" parent="CreditsPopup"]

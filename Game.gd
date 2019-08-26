@@ -41,7 +41,7 @@ func next_level_finished():
 		current_level_nb += 1
 		call_deferred("load_level",current_level_nb)
 	else:
-		get_tree().change_scene("res://End.tscn")
+		get_tree().change_scene("res://Ending.tscn")
 
 func restart_current_level():
 	current_level_nb -= 1

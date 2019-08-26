@@ -7,11 +7,11 @@
 [ext_resource path="res://assets/intro/img_3.jpeg" type="Texture" id=5]
 [ext_resource path="res://assets/intro/img_4.jpeg" type="Texture" id=6]
 [ext_resource path="res://assets/intro/img_5.jpeg" type="Texture" id=7]
-[ext_resource path="res://assets/intro/img_7.jpeg" type="Texture" id=8]
-[ext_resource path="res://assets/intro/img_8.jpeg" type="Texture" id=9]
-[ext_resource path="res://assets/intro/img_9.jpeg" type="Texture" id=10]
-[ext_resource path="res://Image.gd" type="Script" id=11]
-[ext_resource path="res://popup_theme.tres" type="Theme" id=12]
+[ext_resource path="res://assets/intro/img_6.jpeg" type="Texture" id=8]
+[ext_resource path="res://assets/intro/img_7.jpeg" type="Texture" id=9]
+[ext_resource path="res://assets/intro/img_8.jpeg" type="Texture" id=10]
+[ext_resource path="res://assets/intro/img_9.jpeg" type="Texture" id=11]
+[ext_resource path="res://Image.gd" type="Script" id=12]
 [ext_resource path="res://assets/fonts/PermanentMarker-Regular.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://assets/audio/intro.ogg" type="AudioStream" id=14]
 
@@ -178,12 +178,16 @@ texture = ExtResource( 8 )
 position = Vector2( 960, 540 )
 texture = ExtResource( 9 )
 
-[node name="Image8" type="Sprite" parent="."]
+[node name="Image8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 960, 540 )
 texture = ExtResource( 10 )
-script = ExtResource( 11 )
 
-[node name="Anim" type="AnimationPlayer" parent="Image8"]
+[node name="Image9" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 11 )
+script = ExtResource( 12 )
+
+[node name="Anim" type="AnimationPlayer" parent="Image9"]
 anims/fade_in = SubResource( 1 )
 anims/fade_out = SubResource( 2 )
 
@@ -203,7 +207,6 @@ margin_left = 960.0
 margin_top = 540.0
 margin_right = 960.0
 margin_bottom = 540.0
-theme = ExtResource( 12 )
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/Popup/Panel"]
 margin_left = -100.0
@@ -217,7 +220,6 @@ margin_left = -87.0
 margin_top = -76.0
 margin_right = 86.0
 margin_bottom = 76.0
-theme = ExtResource( 12 )
 alignment = 1
 
 [node name="Label" type="Label" parent="Camera2D/Popup/Panel/VBoxContainer"]
@@ -255,6 +257,6 @@ autoplay = true
 [node name="Anim" type="AnimationPlayer" parent="Audio"]
 anims/fade_in = SubResource( 11 )
 anims/fade_out = SubResource( 12 )
-[connection signal="animation_finished" from="Image8/Anim" to="Image8" method="anim_finished"]
+[connection signal="animation_finished" from="Image9/Anim" to="Image9" method="anim_finished"]
 [connection signal="pressed" from="Camera2D/Popup/Panel/VBoxContainer/Yes" to="." method="_on_Yes_pressed"]
 [connection signal="pressed" from="Camera2D/Popup/Panel/VBoxContainer/No" to="." method="_on_No_pressed"]
