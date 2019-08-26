@@ -10,37 +10,37 @@
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/audio/music.ogg" type="AudioStream" id=9]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 0.596523, 2.48526 )
 
-[sub_resource type="Curve2D" id=10]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 125, 0, 0, 0, 0, 0, -625, 0 )
 }
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=3]
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 21, 50, 21, 50, 29, 0, 29 )
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 21, 0, 29, 0, 29, 50, 21, 50 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 21, 0, 29, 0, 29, 21, 50, 21, 50, 29, 21, 29 )
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 21, 21, 21, 0, 29, 0, 29, 29, 0, 29, 0, 21 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 21, 21, 50, 21, 50, 29, 29, 29, 29, 50, 21, 50 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=9]
 points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 
-[sub_resource type="TileSet" id=7]
+[sub_resource type="TileSet" id=10]
 0/name = "floor_tileset.png 0"
 0/texture = ExtResource( 6 )
 0/tex_offset = Vector2( 0, 0 )
@@ -53,7 +53,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 1 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -69,7 +69,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -85,7 +85,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -101,7 +101,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 4 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -117,7 +117,7 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
@@ -133,12 +133,12 @@ points = PoolVector2Array( 0, 21, 29, 21, 29, 50, 21, 50, 21, 29, 0, 29 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=11]
 script/source = "extends Camera2D
 "
 
@@ -167,7 +167,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelContent/End"]
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Saw" parent="LevelContent" instance=ExtResource( 2 )]
 position = Vector2( 500, 250 )
@@ -183,7 +183,7 @@ color = 1
 
 [node name="MovingSaw" type="Path2D" parent="LevelContent"]
 position = Vector2( 1375, 250 )
-curve = SubResource( 10 )
+curve = SubResource( 2 )
 script = ExtResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="LevelContent/MovingSaw"]
@@ -197,7 +197,7 @@ margin_left = 175.0
 margin_top = 100.0
 margin_right = 834.0
 margin_bottom = 175.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 3 )
 text = "Is this a circular saw ? It looks pretty dangerous ! 
 Do not try to hug it !"
 align = 1
@@ -208,7 +208,7 @@ margin_top = 100.0
 margin_right = 1211.0
 margin_bottom = 136.0
 rect_scale = Vector2( 1.90607, 2.21773 )
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.894118, 0.0901961, 0.309804, 1 )
 text = "OH NO ITS MOVING !!!!"
 align = 1
@@ -218,7 +218,7 @@ margin_left = 850.0
 margin_top = 300.0
 margin_right = 1509.0
 margin_bottom = 375.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.894118, 0.0901961, 0.309804, 1 )
 text = "( don't mind the graphic bug pls, it's harmless )"
 align = 1
@@ -229,7 +229,7 @@ scale = Vector2( 1.49999, 0.2 )
 color = 2
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
-tile_set = SubResource( 7 )
+tile_set = SubResource( 10 )
 cell_size = Vector2( 50, 50 )
 cell_tile_origin = 1
 format = 1
@@ -242,7 +242,7 @@ position = Vector2( 200, 250 )
 position = Vector2( 76.3604, 0 )
 anchor_mode = 0
 current = true
-script = SubResource( 9 )
+script = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
