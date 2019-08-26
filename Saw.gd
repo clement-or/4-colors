@@ -4,8 +4,8 @@ extends Area2D
 onready var c = get_node("/root/Constants")
 onready var hitbox = $Hitbox
 
-export(int, "RED", "GREEN", "BLUE", "YELLOW") var color
-enum {RED, GREEN, BLUE, YELLOW}
+export(int, "RED", "GREEN", "BLUE", "YELLOW", "WHITE") var color
+enum {RED, GREEN, BLUE, YELLOW, WHITE}
 
 enum {
 	ENABLED
@@ -26,6 +26,7 @@ func _physics_process(delta):
 		if !is_bg_color(): enable()
 
 func is_bg_color():
+	if color == 4: return false
 	return c.COLORS[color] == c.COLORS[c.color_index]
 
 func disable():

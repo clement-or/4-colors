@@ -1,0 +1,528 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/permanent_marker.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/PermanentMarker-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/audio/menu_accept.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/menu_cancel.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/menu_select.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/menu.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Overlay.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 161
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 10
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -35, 0 ), Vector2( -40, 10 ), Vector2( -35, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.909804, 0.211765, 0.403922, 1 ), Color( 0.905882, 0.0980392, 0.321569, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=7]
+size = 75
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=8]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -35, 0 ), Vector2( -40, 10 ), Vector2( -35, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.282353, 0.270588, 0.733333, 1 ), Color( 0.141176, 0.12549, 0.729412, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=10]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 70
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=14]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 3.03144, 1 ),
+"update": 0,
+"values": [ -6.0, -80.0 ]
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.630249
+margin_bottom = 0.630249
+script = ExtResource( 1 )
+
+[node name="BG" type="ColorRect" parent="."]
+margin_left = -600.0
+margin_top = -800.63
+margin_right = 2400.0
+margin_bottom = 2199.37
+rect_pivot_offset = Vector2( 1511, 1510.37 )
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[node name="TitleBg" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 1925.0
+margin_bottom = 400.0
+
+[node name="Red" type="ColorRect" parent="TitleBg"]
+margin_left = -600.0
+margin_top = -0.630249
+margin_right = 2400.0
+margin_bottom = 99.3698
+color = Color( 0.894118, 0.0901961, 0.309804, 1 )
+
+[node name="Green" type="ColorRect" parent="TitleBg"]
+margin_left = -600.0
+margin_top = 99.3698
+margin_right = 2400.0
+margin_bottom = 199.37
+color = Color( 0.411765, 0.870588, 0.0862745, 1 )
+
+[node name="Blue" type="ColorRect" parent="TitleBg"]
+margin_left = -600.0
+margin_top = 200.0
+margin_right = 2400.0
+margin_bottom = 300.0
+color = Color( 0.172549, 0.156863, 0.690196, 1 )
+
+[node name="Yellow" type="ColorRect" parent="TitleBg"]
+margin_left = -600.0
+margin_top = 300.0
+margin_right = 2400.0
+margin_bottom = 395.0
+color = Color( 0.988235, 0.768627, 0.0980392, 1 )
+
+[node name="Red2" type="ColorRect" parent="TitleBg"]
+margin_left = 53.0
+margin_top = 47.0
+margin_right = 73.0
+margin_bottom = 2199.0
+color = Color( 0.894118, 0.0901961, 0.309804, 1 )
+
+[node name="Green2" type="ColorRect" parent="TitleBg"]
+margin_left = 93.0
+margin_top = 182.0
+margin_right = 113.0
+margin_bottom = 2199.0
+color = Color( 0.411765, 0.870588, 0.0862745, 1 )
+
+[node name="Blue2" type="ColorRect" parent="TitleBg"]
+margin_left = 133.0
+margin_top = 273.0
+margin_right = 153.0
+margin_bottom = 2199.0
+color = Color( 0.172549, 0.156863, 0.690196, 1 )
+
+[node name="Yelow" type="ColorRect" parent="TitleBg"]
+margin_left = 173.0
+margin_top = 349.0
+margin_right = 193.0
+margin_bottom = 2199.0
+color = Color( 0.988235, 0.768627, 0.0980392, 1 )
+
+[node name="White" type="ColorRect" parent="TitleBg"]
+margin_left = -600.0
+margin_top = 992.0
+margin_right = 2400.0
+margin_bottom = 1012.0
+
+[node name="Title" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Title" type="Label" parent="Title"]
+margin_left = 100.125
+margin_top = -76.556
+margin_right = 1600.13
+margin_bottom = 84.444
+rect_scale = Vector2( 1, 3 )
+rect_pivot_offset = Vector2( 57.4898, 2.98111 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 30
+custom_constants/shadow_offset_y = 0
+custom_constants/shadow_as_outline = 0
+text = "4 COLORS"
+align = 1
+
+[node name="Subtitle3" type="Label" parent="Title"]
+editor/display_folded = true
+margin_left = 1575.0
+margin_top = 132.385
+margin_right = 1875.0
+margin_bottom = 182.385
+rect_scale = Vector2( 1, 2 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "WHEX S"
+valign = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="Title/Subtitle3"]
+position = Vector2( -66.1278, -4.803 )
+scale = Vector2( 1.26451, 1.09928 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 222.321, 5.5588, 253.954, 5.5588, 248.817, 11.0372, 248.418, 28.3009, 226.275, 28.3009, 225.186, 8.00114 )
+
+[node name="ColorRect" type="ColorRect" parent="Title/Subtitle3"]
+margin_left = 227.0
+margin_top = 8.0
+margin_right = 240.0
+margin_bottom = 20.0
+
+[node name="Subtitle2" type="Label" parent="Title"]
+margin_left = 1565.0
+margin_top = 244.0
+margin_right = 1775.0
+margin_bottom = 274.0
+rect_scale = Vector2( 1.5, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Journey"
+valign = 1
+
+[node name="bottom" type="Control" parent="."]
+editor/display_folded = true
+margin_left = 1477.0
+margin_top = 866.37
+margin_right = 1517.0
+margin_bottom = 906.37
+
+[node name="Role" type="Label" parent="bottom"]
+margin_left = -1489.0
+margin_top = 151.72
+margin_right = 567.0
+margin_bottom = 354.72
+custom_fonts/font = SubResource( 4 )
+text = "a game created for the 9th geta game jam"
+align = 1
+
+[node name="Buttons" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Play" type="Control" parent="Buttons"]
+margin_left = 1242.87
+margin_top = 487.608
+margin_right = 1803.87
+margin_bottom = 833.607
+
+[node name="ColorRect2" type="ColorRect" parent="Buttons/Play"]
+margin_left = -57.0
+margin_top = 20.0
+margin_right = 737.0
+margin_bottom = 183.0
+color = Color( 0.65098, 0.105882, 0.133333, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/Play"]
+margin_left = -35.0
+margin_right = 799.0
+margin_bottom = 163.0
+color = Color( 0.905882, 0.0980392, 0.321569, 1 )
+
+[node name="Anim" type="AnimationPlayer" parent="Buttons/Play/ColorRect"]
+anims/click = SubResource( 5 )
+anims/hover = SubResource( 6 )
+
+[node name="Play" type="Button" parent="Buttons/Play"]
+margin_right = 700.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 7 )
+text = "PLAY"
+flat = true
+align = 0
+
+[node name="Credits" type="Control" parent="Buttons"]
+margin_left = 1242.87
+margin_top = 767.72
+margin_right = 1803.87
+margin_bottom = 1113.72
+
+[node name="ColorRect2" type="ColorRect" parent="Buttons/Credits"]
+margin_left = -57.0
+margin_top = 20.0
+margin_right = 737.0
+margin_bottom = 183.0
+color = Color( 0.211765, 0.121569, 0.4, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/Credits"]
+margin_left = -35.0
+margin_right = 799.0
+margin_bottom = 163.0
+color = Color( 0.282353, 0.270588, 0.733333, 1 )
+
+[node name="Anim" type="AnimationPlayer" parent="Buttons/Credits/ColorRect"]
+anims/click = SubResource( 8 )
+anims/hover = SubResource( 9 )
+
+[node name="Credits" type="Button" parent="Buttons/Credits"]
+margin_right = 700.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 7 )
+text = "CREDITS"
+flat = true
+align = 0
+
+[node name="CreditsPopup" type="Popup" parent="."]
+margin_left = -8.0
+margin_top = 400.0
+margin_right = 2100.0
+margin_bottom = 1093.0
+
+[node name="Bg" type="ColorRect" parent="CreditsPopup"]
+margin_left = -19.0
+margin_right = 2133.0
+margin_bottom = 688.0
+color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+
+[node name="Label" type="Label" parent="CreditsPopup"]
+margin_left = -5.0
+margin_right = 1927.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 10 )
+text = "CREDITS"
+align = 1
+
+[node name="Topy" type="Control" parent="CreditsPopup"]
+margin_left = 395.0
+margin_top = 140.37
+margin_right = 435.0
+margin_bottom = 180.37
+
+[node name="Role" type="Label" parent="CreditsPopup/Topy"]
+margin_left = -818.35
+margin_right = 912.65
+margin_bottom = 203.0
+custom_fonts/font = SubResource( 11 )
+text = "lead development
+"
+align = 1
+
+[node name="Name" type="Label" parent="CreditsPopup/Topy"]
+margin_left = -821.0
+margin_top = 24.0901
+margin_right = 910.0
+margin_bottom = 153.09
+custom_fonts/font = ExtResource( 3 )
+text = "Clement \"topy\" o."
+align = 1
+
+[node name="Lyrola" type="Control" parent="CreditsPopup"]
+margin_left = 395.0
+margin_top = 323.37
+margin_right = 435.0
+margin_bottom = 363.37
+
+[node name="Role" type="Label" parent="CreditsPopup/Lyrola"]
+margin_left = -818.35
+margin_right = 912.65
+margin_bottom = 203.0
+custom_fonts/font = SubResource( 11 )
+text = "art
+"
+align = 1
+
+[node name="Name" type="Label" parent="CreditsPopup/Lyrola"]
+margin_left = -821.0
+margin_top = 17.8893
+margin_right = 910.0
+margin_bottom = 220.889
+custom_fonts/font = ExtResource( 3 )
+text = "emilia \"lyrola\" b."
+align = 1
+
+[node name="BroZ" type="Control" parent="CreditsPopup"]
+margin_left = 391.0
+margin_top = 506.37
+margin_right = 431.0
+margin_bottom = 546.37
+
+[node name="Role" type="Label" parent="CreditsPopup/BroZ"]
+margin_left = -818.35
+margin_right = 912.65
+margin_bottom = 203.0
+custom_fonts/font = SubResource( 11 )
+text = "level design"
+align = 1
+
+[node name="Name" type="Label" parent="CreditsPopup/BroZ"]
+margin_left = -821.0
+margin_top = 30.1926
+margin_right = 910.0
+margin_bottom = 233.193
+custom_fonts/font = ExtResource( 3 )
+text = "ludovic \"BroZ\" w."
+align = 1
+
+[node name="Music" type="Control" parent="CreditsPopup"]
+margin_left = 1485.0
+margin_top = 187.471
+margin_right = 1525.0
+margin_bottom = 227.471
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Role" type="Label" parent="CreditsPopup/Music"]
+margin_left = -818.35
+margin_top = -64.2848
+margin_right = 912.65
+margin_bottom = 138.715
+custom_fonts/font = SubResource( 11 )
+text = "music"
+align = 1
+
+[node name="Name" type="Label" parent="CreditsPopup/Music"]
+margin_left = -821.0
+margin_top = -37.2362
+margin_right = 910.0
+margin_bottom = 223.764
+custom_fonts/font = SubResource( 12 )
+text = "juhani junkalai
+opengameart.com"
+align = 1
+
+[node name="Thanks" type="Control" parent="CreditsPopup"]
+margin_left = 1485.0
+margin_top = 245.664
+margin_right = 1525.0
+margin_bottom = 285.664
+
+[node name="Role" type="Label" parent="CreditsPopup/Thanks"]
+margin_left = -818.35
+margin_top = 175.306
+margin_right = 912.65
+margin_bottom = 378.306
+custom_fonts/font = SubResource( 11 )
+text = "shader code"
+align = 1
+
+[node name="Name" type="Label" parent="CreditsPopup/Thanks"]
+margin_left = -821.0
+margin_top = 206.671
+margin_right = 910.0
+margin_bottom = 467.671
+custom_fonts/font = SubResource( 12 )
+text = "Decroded
+huge thank you !"
+align = 1
+
+[node name="Close" type="Button" parent="CreditsPopup"]
+margin_left = 1849.0
+margin_top = 37.3698
+margin_right = 2009.0
+margin_bottom = 151.37
+custom_fonts/font = SubResource( 13 )
+text = "X"
+
+[node name="Audio" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Accept" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 5 )
+
+[node name="Cancel" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 6 )
+
+[node name="Hover" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+volume_db = -6.0
+
+[node name="Anim" type="AnimationPlayer" parent="Audio/Music"]
+anims/fade_out = SubResource( 14 )
+
+[node name="Overlay" parent="." instance=ExtResource( 9 )]
+is_visible = false
+[connection signal="mouse_entered" from="Buttons/Play/Play" to="." method="button_hover"]
+[connection signal="pressed" from="Buttons/Play/Play" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="Buttons/Credits/Credits" to="." method="button_hover"]
+[connection signal="pressed" from="Buttons/Credits/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="CreditsPopup/Close" to="." method="_on_Popup_Close_pressed"]
+[connection signal="fade_in_finished" from="Overlay" to="." method="_on_Overlay_fade_in_finished"]
