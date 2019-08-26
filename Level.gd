@@ -9,6 +9,7 @@ signal level_finished
 signal level_restarted
 
 func _ready():
+	$Player.is_dead=false
 	$Player.connect("is_dead", self, "restart")
 	c.color_index=3
 	change_bg_color()
@@ -23,6 +24,9 @@ func change_bg_color():
 
 func end_level(body):
 	if body.get_name() == "Player":
+		body.is_dead=true
+		body.motion.x = 0
+		body.current_state = 1
 		$LevelContent/LevelEnd/Audio.play()
 		emit_signal("level_finished")
 

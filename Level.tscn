@@ -182,7 +182,7 @@ color = 3
 position = Vector2( 369.153, 350 )
 
 [node name="Saw3" parent="LevelContent" instance=ExtResource( 5 )]
-position = Vector2( 525, 350 )
+position = Vector2( 550, 350 )
 color = 1
 
 [node name="Saw4" parent="LevelContent" instance=ExtResource( 5 )]
@@ -199,6 +199,7 @@ color = 4
 
 [node name="MovingSaw" parent="LevelContent" instance=ExtResource( 6 )]
 position = Vector2( 600, 474.377 )
+color = 4
 
 [node name="Floor" type="TileMap" parent="LevelContent"]
 tile_set = SubResource( 7 )

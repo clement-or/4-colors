@@ -46,9 +46,9 @@ func check_controls():
 		motion.x -= x_speed/3
 		$AnimatedSprite.flip_h = true
 		if is_on_floor(): current_state = RUN
-	elif motion.x != 0 && !(Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
-		if motion.x > 0: motion.x -= x_speed/10
-		else: motion.x += x_speed/10
+	if motion.x != 0 && !(Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
+		if motion.x > 0: motion.x -= motion.x/3
+		elif motion.x < 0: motion.x -= motion.x/3
 	motion.x = clamp(motion.x, -x_speed, x_speed)
 	
 	# Vertical input
