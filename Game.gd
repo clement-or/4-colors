@@ -10,7 +10,8 @@ var LEVELS = [
 	preload("res://levels/Level6.tscn"),
 	preload("res://levels/Level7.tscn"),
 	preload("res://levels/Level8.tscn"),
-	preload("res://levels/Level9.tscn")
+	preload("res://levels/Level9.tscn"),
+	preload("res://levels/Level10.tscn")
 ]
 var current_level_nb = 0
 var current_level_inst
@@ -29,14 +30,14 @@ func load_level(nb):
 	add_child_below_node($Music,current_level_inst)
 	current_level_inst.connect("level_finished", self, "next_level")
 	current_level_inst.connect("level_restarted", self, "restart_current_level")
-	current_level_inst.set_level_counter(current_level_nb,LEVELS.size())
+	current_level_inst.set_level_counter(current_level_nb,LEVELS.size()-1)
 
 func next_level():
 	$Overlay.fade_in()
 
 func next_level_finished():
 	call_deferred("remove_child",current_level_inst)
-	if current_level_nb < 9:
+	if current_level_nb < 10:
 		current_level_nb += 1
 		call_deferred("load_level",current_level_nb)
 	else:

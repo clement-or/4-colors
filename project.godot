@@ -25,6 +25,7 @@ Constants="*res://Constants.tscn"
 
 [debug]
 
+settings/fps/force_fps=30
 gdscript/warnings/unused_variable=false
 gdscript/warnings/unused_class_variable=false
 gdscript/warnings/unused_argument=false
