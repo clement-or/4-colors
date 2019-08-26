@@ -5,30 +5,27 @@ onready var c = get_node("/root/Constants")
 onready var follow = $PathFollow2D
 
 # Exports
-export var speed = 0.5 #between 0 and 1
+export var speed_multiplier = 1 #pixels/s
 export(int, "RED", "GREEN", "BLUE", "YELLOW", "WHITE") var color
 enum {RED,GREEN,BLUE,YELLOW,WHITE}
 
 var is_moving_right = true
+var length
+var t = 0
 
 func _ready():
 	if !color: color = RED
 	$PathFollow2D/Saw.set_color(color)
 	set_process(true)
+	length = curve.get_baked_length()
 	
-
+var off
 func _process(delta):
-	if is_moving_right:
-		follow.unit_offset = follow.unit_offset-speed*delta
-	else:
-		follow.unit_offset = follow.unit_offset+speed*delta
-		
-	if follow.unit_offset > 0.9:
-		follow.unit_offset = 0.9
-		is_moving_right = !is_moving_right
-	elif follow.unit_offset < 0.1:
-		follow.unit_offset = 0.1
-		is_moving_right = !is_moving_right
+	t += delta*500
+	off = (length/2)*cos((((PI/2))*(speed_multiplier/length)*t)+PI)+(length/2)
+	if off < 1:
+		off = 1
+	follow.offset = off
 		
 func _draw():
 	var line_color
